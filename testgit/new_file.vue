@@ -2,6 +2,7 @@
 </template>
 
 <script>
+	addEventListener()
 </script>
 
 <style>
