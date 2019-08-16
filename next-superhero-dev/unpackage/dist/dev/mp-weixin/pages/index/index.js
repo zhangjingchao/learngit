@@ -112,66 +112,129 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var trailerStars = function trailerStars() {return __webpack_require__.e(/*! import() | components/trailerStars */ "components/trailerStars").then(__webpack_require__.bind(null, /*! ../../components/trailerStars.vue */ 31));};var _default =
 
-// 获取common.js中的服务器地址
-//import common from "../../common/common.js";
-var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   data: function data() {
     return {
       carouselList: [],
-      hotSuperHeroList: [] };
+      hotSuperHeroList: [],
+      hotTrailerList: [],
+      animationData: {} };
 
+  },
+  onUnload: function onUnload() {
+    // 页面卸载的时候，清楚动画对象
+    this.animationData = {};
   },
   onLoad: function onLoad() {
     var me = this;
+    animationData;
 
 
     // 在页面创建的时候，创建一个临时动画对象
-    //this.animation = uni.createAnimation();
+    this.animation = uni.createAnimation();
 
 
     // 获取common.js中的服务器地址
@@ -204,8 +267,42 @@ var _default =
         }
       } });
 
+
+    // 查询热门超英
+    uni.request({
+      url: serverUrl + '/index/movie/hot?type=trailer',
+      method: "POST",
+      success: function success(res) {
+        // 获取真实数据之前，务必判断状态是否为200
+        if (res.statusCode == 200) {
+          var hotTrailerList = res.data;
+          me.hotTrailerList = hotTrailerList;
+        }
+      } });
+
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    // 实现动画点赞效果
+    praiseMe: function praiseMe() {
+      // 构建动画数据，并且通过step来表示这组动画的完成
+      this.animation.translateY(-60).opacity(1).step({
+        duration: 400 });
+
+
+      // 导出动画数据到view组件，实现组件的动画效果
+      this.animationData = this.animation.export();
+
+      // 还原动画
+      setTimeout(function () {
+        this.animation.translateY(0).opacity(0).step({
+          duration: 0 });
+
+      }.bind(this), 500);
+    } },
+
+
+  components: {
+    trailerStars: trailerStars } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
