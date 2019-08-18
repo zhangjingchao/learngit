@@ -146,6 +146,7 @@
 	-o-text-overflow: ellipsis;
 	   text-overflow: ellipsis;
 	font-size: 16px;
+	font-weight:600;
 }
 .moive-info {
 	color: gray;

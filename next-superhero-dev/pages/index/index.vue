@@ -64,27 +64,26 @@
 			</view>
 		</view>
 		<view class="page-block guess-u-like">
-			<view class="sigle-like-movie">
-				<image src="http://122.152.205.72:88/superhero/xman/Logan/poster.png" class="like-movie"></image>
+			<view v-for="(guess,gIndex) in guessULikeList" class="sigle-like-movie">
+				<image :src="guess.cover" class="like-movie"></image>
 				<view class="moive-desc">
 					<view class="moive-title">
-						表附小大战仇人表附小大战仇表附小大战仇
+						{{guess.name}}
 					</view>
 					<trailer-stars :innerScore="9.1" showNum="0"></trailer-stars>
-
 					<view class="moive-info">
-						故事发生在2029年，彼时，
+						{{guess.basicInfo}}
 					</view>
 					<view class="moive-info">
-						X战警早已经解散
+						{{guess.releaseDate}}
 					</view>
 				</view>
-				<view class="moive-oper">
+				<view class="moive-oper" :data-gIndex="gIndex" @click="praiseMe">
 					<image src="../../static/icos/praise.png" class="praise-ico"></image>
 					<view class="praise-me">
 						点赞
 					</view>
-					<view :animation="animationData" class="praise-me animation-opacity">
+					<view :animation="animationDataArr[gIndex]" class="praise-me animation-opacity">
 						+1
 					</view>
 				</view>
@@ -107,16 +106,21 @@
 				carouselList: [],
 				hotSuperHeroList: [],
 				hotTrailerList: [],
-				animationData: {}
+				guessULikeList: [],
+				animationData: {},
+				animationDataArr: [{}, {}, {}, {}, {}, {}]
 			}
 		},
 		onUnload() {
-			// 页面卸载的时候，清楚动画对象
+			// 页面卸载的时候，清除动画对象
 			this.animationData = {};
+			this.animationDataArr = [{}, {}, {}, {}, {}, {}];
+		},
+		onPullDownRefresh() {
+			this.refresh();
 		},
 		onLoad() {
 			var me = this;
-			animationData
 
 			// #ifdef APP-PLUS || MP-WEIXIN
 			// 在页面创建的时候，创建一个临时动画对象
@@ -166,24 +170,64 @@
 					}
 				}
 			});
+			
+			me.refresh();
 		},
 		methods: {
+			//刷新页面数据
+			refresh() {
+				var me = this;
+				uni.showLoading({
+					mask:true
+				});
+				
+				uni.showNavigationBarLoading();
+				
+				//中获取服务器的地址
+				// 通过挂载到main.js，作为全局变量
+				var serverUrl = me.serverUrl;
+
+				// 查询猜你喜欢数据列表
+				uni.request({
+					url: serverUrl + '/index/guessULike',
+					method: "POST",
+					success: (res) => {
+						// 获取真实数据之前，务必判断状态是否为200
+						if (res.statusCode == 200) {
+							var guessULikeList = res.data;
+							me.guessULikeList = guessULikeList;
+						}
+					},complete() {
+						uni.stopPullDownRefresh();
+						uni.hideLoading();
+						uni.hideNavigationBarLoading();
+					}
+				});
+			},
 			// 实现动画点赞效果
-			praiseMe() {
+			praiseMe(e) {
+				// #ifdef APP-PLUS || MP-WEIXIN
+				var gIndex = e.currentTarget.dataset.gindex;
+				// return;
 				// 构建动画数据，并且通过step来表示这组动画的完成
 				this.animation.translateY(-60).opacity(1).step({
-					duration: 400
+					duration: 500
 				});
 
 				// 导出动画数据到view组件，实现组件的动画效果
-				this.animationData = this.animation.export();
+				// this.animationData = this.animation.export();
+				this.animationData = this.animation;
+				this.animationDataArr[gIndex] = this.animationData.export();
 
 				// 还原动画
 				setTimeout(function() {
 					this.animation.translateY(0).opacity(0).step({
 						duration: 0
-					})
-				}.bind(this), 500);
+					});
+					this.animationData = this.animation;
+					this.animationDataArr[gIndex] = this.animationData.export();
+				}.bind(this), 600)
+				// #endif
 			}
 		},
 

@@ -1,8 +1,8 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
 /* 0 */
-/*!*********************************************************************!*\
-  !*** D:/app/workspace/learngit/learngit/next-superhero-dev/main.js ***!
-  \*********************************************************************/
+/*!************************************************************!*\
+  !*** D:/app/workspace/learngit/next-superhero-dev/main.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12,8 +12,8 @@ var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 5));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 _vue.default.config.productionTip = false;
-//Vue.prototype.serverUrl = "http://39.96.44.100:8080";			// 生产环境
-_vue.default.prototype.serverUrl = "http://localhost:8080"; // 开发环境
+_vue.default.prototype.serverUrl = "http://39.96.44.100:8080"; // 生产环境
+// Vue.prototype.serverUrl = "http://localhost:8080";		// 开发环境
 
 _App.default.mpType = 'app';
 
@@ -755,7 +755,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -6967,7 +6967,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -6988,14 +6988,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7071,7 +7071,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7478,9 +7478,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!************************************************************************!*\
-  !*** D:/app/workspace/learngit/learngit/next-superhero-dev/pages.json ***!
-  \************************************************************************/
+/*!***************************************************************!*\
+  !*** D:/app/workspace/learngit/next-superhero-dev/pages.json ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7600,9 +7600,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 11 */
-/*!******************************************************************************************************!*\
-  !*** D:/app/workspace/learngit/learngit/next-superhero-dev/main.js?{"page":"pages%2Findex%2Findex"} ***!
-  \******************************************************************************************************/
+/*!*********************************************************************************************!*\
+  !*** D:/app/workspace/learngit/next-superhero-dev/main.js?{"page":"pages%2Findex%2Findex"} ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7623,9 +7623,9 @@ createPage(_index.default);
 /* 17 */,
 /* 18 */,
 /* 19 */
-/*!********************************************************************************************************!*\
-  !*** D:/app/workspace/learngit/learngit/next-superhero-dev/main.js?{"page":"pages%2Fsearch%2Fsearch"} ***!
-  \********************************************************************************************************/
+/*!***********************************************************************************************!*\
+  !*** D:/app/workspace/learngit/next-superhero-dev/main.js?{"page":"pages%2Fsearch%2Fsearch"} ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7643,10 +7643,12 @@ createPage(_search.default);
 /* 22 */,
 /* 23 */,
 /* 24 */,
-/* 25 */
-/*!************************************************************************************************!*\
-  !*** D:/app/workspace/learngit/learngit/next-superhero-dev/main.js?{"page":"pages%2Fme%2Fme"} ***!
-  \************************************************************************************************/
+/* 25 */,
+/* 26 */,
+/* 27 */
+/*!***************************************************************************************!*\
+  !*** D:/app/workspace/learngit/next-superhero-dev/main.js?{"page":"pages%2Fme%2Fme"} ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7654,7 +7656,7 @@ createPage(_search.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _me = _interopRequireDefault(__webpack_require__(/*! ./pages/me/me.vue */ 26));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _me = _interopRequireDefault(__webpack_require__(/*! ./pages/me/me.vue */ 28));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_me.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
