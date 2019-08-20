@@ -121,6 +121,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -159,6 +162,20 @@ var _default =
       } });
 
   },
+  onReachBottom: function onReachBottom() {
+    var me = this;
+
+    var page = me.page + 1; // 查询下一页面，当前页数累加1
+    var keywords = me.keywords; // 获取当前页面中data里的搜索值
+    var totalPages = me.totalPages; //获取总页数
+
+    // 如果档期需要分页的分页数和总页数相等，就不分页
+    if (page > totalPages) {
+      return;
+    }
+
+    me.pagedTrailerList(keywords, page, 15);
+  },
   methods: {
     pagedTrailerList: function pagedTrailerList(keywords, page, pageSize) {
       var me = this;
@@ -192,7 +209,6 @@ var _default =
           uni.hideNavigationBarLoading();
         } });
 
-      debugger;
     },
     searchMe: function searchMe(e) {
       var me = this;
@@ -202,6 +218,13 @@ var _default =
       me.trailerList = [];
 
       me.pagedTrailerList(value, 1, 15);
+    },
+    showTrailer: function showTrailer(e) {
+      var trailerId = e.currentTarget.dataset.trailerid;
+      // 页面跳转接口API
+      uni.navigateTo({
+        url: "../movie/movie?trailerId=" + trailerId });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
