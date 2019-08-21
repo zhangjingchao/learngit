@@ -1061,35 +1061,282 @@ function gz$gwx_1(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_1)return __WXML_GLOBAL__.ops_cached.$gwx_1
 __WXML_GLOBAL__.ops_cached.$gwx_1=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'content'])
-Z([3,'这是首页'])
+Z([3,'movie-score-wrapper'])
+Z([3,'__i0__'])
+Z([3,'yellow'])
+Z([[7],[3,'yellowScore']])
+Z([3,'star-icon'])
+Z([3,'../static/icos/star-yellow.png'])
+Z([3,'__i1__'])
+Z([3,'gray'])
+Z([[7],[3,'grayScore']])
+Z(z[4])
+Z([3,'../static/icos/star-gray.png'])
+Z([[2,'=='],[[7],[3,'showNum']],[1,1]])
+Z([3,'movie-score'])
+Z([a,[[2,'+'],[[2,'+'],[1,''],[[7],[3,'innerScore']]],[1,'']]])
 })(__WXML_GLOBAL__.ops_cached.$gwx_1);return __WXML_GLOBAL__.ops_cached.$gwx_1
 }
 function gz$gwx_2(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_2)return __WXML_GLOBAL__.ops_cached.$gwx_2
 __WXML_GLOBAL__.ops_cached.$gwx_2=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'这是个人页面'])
+Z([3,'black'])
+Z([3,'__e'])
+Z([3,'cover'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'longpress']],[[4],[[5],[[4],[[5],[[5],[1,'operator']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([3,'widthFix'])
+Z([[7],[3,'cover']])
 })(__WXML_GLOBAL__.ops_cached.$gwx_2);return __WXML_GLOBAL__.ops_cached.$gwx_2
 }
 function gz$gwx_3(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_3)return __WXML_GLOBAL__.ops_cached.$gwx_3
 __WXML_GLOBAL__.ops_cached.$gwx_3=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'这是搜索页面'])
+Z([3,'page'])
+Z([1,true])
+Z([3,'carousel'])
+Z(z[1])
+Z([3,'__i0__'])
+Z(z[2])
+Z([[7],[3,'carouselList']])
+Z(z[2])
+Z([[6],[[7],[3,'carousel']],[3,'poster']])
+Z([3,'page-block super-hot'])
+Z([3,'hot-title-wapper'])
+Z([3,'hot-icon'])
+Z([3,'../../static/icos/hot.png'])
+Z([3,'hot-title'])
+Z([3,'热门超英'])
+Z([3,'page-block hot'])
+Z([3,'true'])
+Z([3,'__i1__'])
+Z([3,'hotSuperHero'])
+Z([[7],[3,'hotSuperHeroList']])
+Z([3,'single-poster'])
+Z([3,'poster-wapper'])
+Z([3,'poster'])
+Z([[6],[[7],[3,'hotSuperHero']],[3,'cover']])
+Z([3,'movie-name'])
+Z([a,[[2,'+'],[[2,'+'],[1,''],[[6],[[7],[3,'hotSuperHero']],[3,'name']]],[1,'']]])
+Z([3,'__l'])
+Z([[6],[[7],[3,'hotSuperHero']],[3,'score']])
+Z([3,'1'])
+Z([[2,'+'],[1,'1-'],[[7],[3,'__i1__']]])
+Z(z[9])
+Z(z[10])
+Z(z[11])
+Z([3,'../../static/icos/interest.png'])
+Z(z[13])
+Z([3,'热门预告'])
+Z([3,'hot-movie page-block'])
+Z([3,'__i2__'])
+Z([3,'trailer'])
+Z([[7],[3,'hotTrailerList']])
+Z([3,'hot-movie-single'])
+Z([[6],[[7],[3,'trailer']],[3,'poster']])
+Z([[6],[[7],[3,'trailer']],[3,'trailer']])
+Z(z[9])
+Z(z[10])
+Z(z[11])
+Z([3,'../../static/icos/guess-u-like.png'])
+Z(z[13])
+Z([3,'猜你喜欢'])
+Z([3,'page-block guess-u-like'])
+Z([3,'gIndex'])
+Z([3,'guess'])
+Z([[7],[3,'guessULikeList']])
+Z([3,'sigle-like-movie'])
+Z([3,'like-movie'])
+Z([[6],[[7],[3,'guess']],[3,'cover']])
+Z([3,'moive-desc'])
+Z([3,'moive-title'])
+Z([a,[[2,'+'],[[2,'+'],[1,''],[[6],[[7],[3,'guess']],[3,'name']]],[1,'']]])
+Z(z[26])
+Z([1,9.1])
+Z([3,'0'])
+Z([[2,'+'],[1,'2-'],[[7],[3,'gIndex']]])
+Z([3,'moive-info'])
+Z([a,[[2,'+'],[[2,'+'],[1,''],[[6],[[7],[3,'guess']],[3,'basicInfo']]],[1,'']]])
+Z(z[63])
+Z([a,[[2,'+'],[[2,'+'],[1,''],[[6],[[7],[3,'guess']],[3,'releaseDate']]],[1,'']]])
+Z([3,'__e'])
+Z([3,'moive-oper'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'praiseMe']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([[7],[3,'gIndex']])
+Z([3,'praise-ico'])
+Z([3,'../../static/icos/praise.png'])
+Z([3,'praise-me'])
+Z([3,'点赞'])
+Z([[6],[[7],[3,'animationDataArr']],[[7],[3,'gIndex']]])
+Z([3,'praise-me animation-opacity'])
+Z([3,'+1'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_3);return __WXML_GLOBAL__.ops_cached.$gwx_3
+}
+function gz$gwx_4(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_4)return __WXML_GLOBAL__.ops_cached.$gwx_4
+__WXML_GLOBAL__.ops_cached.$gwx_4=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'这是个人页面'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_4);return __WXML_GLOBAL__.ops_cached.$gwx_4
+}
+function gz$gwx_5(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_5)return __WXML_GLOBAL__.ops_cached.$gwx_5
+__WXML_GLOBAL__.ops_cached.$gwx_5=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'page'])
+Z([3,'player'])
+Z([3,'movie'])
+Z([3,'myTrailer'])
+Z([[6],[[7],[3,'trailerInfo']],[3,'poster']])
+Z([[6],[[7],[3,'trailerInfo']],[3,'trailer']])
+Z([3,'movie-info'])
+Z([[2,'+'],[1,'../cover/cover?cover\x3d'],[[6],[[7],[3,'trailerInfo']],[3,'cover']]])
+Z([3,'cover'])
+Z([[6],[[7],[3,'trailerInfo']],[3,'cover']])
+Z([3,'movie-desc'])
+Z([3,'title'])
+Z([a,[[6],[[7],[3,'trailerInfo']],[3,'name']]])
+Z([3,'basic-info'])
+Z([a,[[6],[[7],[3,'trailerInfo']],[3,'basicInfo']]])
+Z(z[13])
+Z([a,[[6],[[7],[3,'trailerInfo']],[3,'originalName']]])
+Z(z[13])
+Z([a,[[6],[[7],[3,'trailerInfo']],[3,'totalTime']]])
+Z(z[13])
+Z([a,[[6],[[7],[3,'trailerInfo']],[3,'releaseDate']]])
+Z([3,'score-block'])
+Z([3,'big-score'])
+Z([3,'score-words'])
+Z([3,'综合评分：'])
+Z([3,'movie-score'])
+Z([a,[[6],[[7],[3,'trailerInfo']],[3,'score']]])
+Z([3,'score-stars'])
+Z([[2,'>='],[[6],[[7],[3,'trailerInfo']],[3,'score']],[1,0]])
+Z([3,'__l'])
+Z([[6],[[7],[3,'trailerInfo']],[3,'score']])
+Z([3,'0'])
+Z([3,'1'])
+Z([3,'prise-counts'])
+Z([a,[[2,'+'],[[2,'+'],[1,''],[[6],[[7],[3,'trailerInfo']],[3,'prisedCounts']]],[1,'  人点赞']]])
+Z([3,'line-wapper'])
+Z([3,'line'])
+Z([3,'plots-block'])
+Z([3,'plots-title'])
+Z([3,'剧情介绍'])
+Z([3,'plots-desc'])
+Z([a,[[6],[[7],[3,'trailerInfo']],[3,'plotDesc']]])
+Z([3,'scroll-block'])
+Z(z[38])
+Z([3,'演职人员'])
+Z([3,'scroll-list'])
+Z([3,'staffIndex'])
+Z([3,'director'])
+Z([[7],[3,'directorArray']])
+Z([3,'actor-wapper'])
+Z([3,'__e'])
+Z([3,'single-actor'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'lookStaffs']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([[7],[3,'staffIndex']])
+Z([3,'aspectFill'])
+Z([[6],[[7],[3,'director']],[3,'photo']])
+Z([3,'actor-name'])
+Z([a,[[6],[[7],[3,'director']],[3,'name']]])
+Z([3,'actor-role'])
+Z([a,[[6],[[7],[3,'director']],[3,'actName']]])
+Z([3,'actorIndex'])
+Z([3,'actor'])
+Z([[7],[3,'actorArray']])
+Z(z[49])
+Z(z[50])
+Z(z[51])
+Z(z[52])
+Z([[2,'+'],[[7],[3,'actorIndex']],[[6],[[7],[3,'directorArray']],[3,'length']]])
+Z(z[54])
+Z([[6],[[7],[3,'actor']],[3,'photo']])
+Z(z[56])
+Z([a,[[6],[[7],[3,'actor']],[3,'name']]])
+Z(z[58])
+Z([a,[[6],[[7],[3,'actor']],[3,'actName']]])
+Z(z[42])
+Z(z[38])
+Z([3,'剧照'])
+Z(z[45])
+Z([3,'imgIndex'])
+Z([3,'img'])
+Z([[7],[3,'plotPicsArray']])
+Z(z[50])
+Z([3,'plot-image'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'lookMe']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([[7],[3,'imgIndex']])
+Z(z[54])
+Z([[7],[3,'img']])
+})(__WXML_GLOBAL__.ops_cached.$gwx_5);return __WXML_GLOBAL__.ops_cached.$gwx_5
+}
+function gz$gwx_6(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_6)return __WXML_GLOBAL__.ops_cached.$gwx_6
+__WXML_GLOBAL__.ops_cached.$gwx_6=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'page'])
+Z([3,'search-block'])
+Z([3,'search-ico-wapper'])
+Z([3,'search-ico'])
+Z([3,'../../static/icos/search.png'])
+Z([3,'__e'])
+Z([3,'search-text'])
+Z([3,'search'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'confirm']],[[4],[[5],[[4],[[5],[[5],[1,'searchMe']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([3,'10'])
+Z([3,'搜索预告'])
+Z([3,'movie-list page-block'])
+Z([3,'__i0__'])
+Z([3,'trailer'])
+Z([[7],[3,'trailerList']])
+Z([3,'movie-wapper'])
+Z(z[5])
+Z([3,'poster'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'showTrailer']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([[6],[[7],[3,'trailer']],[3,'id']])
+Z([[6],[[7],[3,'trailer']],[3,'cover']])
+})(__WXML_GLOBAL__.ops_cached.$gwx_6);return __WXML_GLOBAL__.ops_cached.$gwx_6
 }
 __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./pages/index/index.wxml','./pages/me/me.wxml','./pages/search/search.wxml'];d_[x[0]]={}
+var x=['./components/trailerStars.wxml','./pages/cover/cover.wxml','./pages/index/index.wxml','./pages/me/me.wxml','./pages/movie/movie.wxml','./pages/search/search.wxml'];d_[x[0]]={}
 var m0=function(e,s,r,gg){
 var z=gz$gwx_1()
 var oB=_n('view')
 _rz(z,oB,'class',0,e,s,gg)
-var xC=_oz(z,1,e,s,gg)
+var oD=_v()
+_(oB,oD)
+var fE=function(hG,cF,oH,gg){
+var oJ=_mz(z,'image',['class',4,'src',1],[],hG,cF,gg)
+_(oH,oJ)
+return oH
+}
+oD.wxXCkey=2
+_2z(z,3,fE,e,s,gg,oD,'yellow','__i0__','')
+var lK=_v()
+_(oB,lK)
+var aL=function(eN,tM,bO,gg){
+var xQ=_mz(z,'image',['class',9,'src',1],[],eN,tM,gg)
+_(bO,xQ)
+return bO
+}
+lK.wxXCkey=2
+_2z(z,8,aL,e,s,gg,lK,'gray','__i1__','')
+var xC=_v()
 _(oB,xC)
+if(_oz(z,11,e,s,gg)){xC.wxVkey=1
+var oR=_n('view')
+_rz(z,oR,'class',12,e,s,gg)
+var fS=_oz(z,13,e,s,gg)
+_(oR,fS)
+_(xC,oR)
+}
+xC.wxXCkey=1
 _(r,oB)
 return r
 }
@@ -1097,23 +1344,377 @@ e_[x[0]]={f:m0,j:[],i:[],ti:[],ic:[]}
 d_[x[1]]={}
 var m1=function(e,s,r,gg){
 var z=gz$gwx_2()
-var fE=_n('view')
-var cF=_oz(z,0,e,s,gg)
-_(fE,cF)
-_(r,fE)
+var hU=_n('view')
+_rz(z,hU,'class',0,e,s,gg)
+var oV=_mz(z,'image',['bindlongpress',1,'class',1,'data-event-opts',2,'mode',3,'src',4],[],e,s,gg)
+_(hU,oV)
+_(r,hU)
 return r
 }
 e_[x[1]]={f:m1,j:[],i:[],ti:[],ic:[]}
 d_[x[2]]={}
 var m2=function(e,s,r,gg){
 var z=gz$gwx_3()
-var oH=_n('view')
-var cI=_oz(z,0,e,s,gg)
-_(oH,cI)
-_(r,oH)
+var oX=_n('view')
+_rz(z,oX,'class',0,e,s,gg)
+var lY=_mz(z,'swiper',['autoplay',1,'class',1,'indicatorDots',2],[],e,s,gg)
+var aZ=_v()
+_(lY,aZ)
+var t1=function(b3,e2,o4,gg){
+var o6=_n('swiper-item')
+var f7=_mz(z,'image',['class',7,'src',1],[],b3,e2,gg)
+_(o6,f7)
+_(o4,o6)
+return o4
+}
+aZ.wxXCkey=2
+_2z(z,6,t1,e,s,gg,aZ,'carousel','__i0__','')
+_(oX,lY)
+var c8=_n('view')
+_rz(z,c8,'class',9,e,s,gg)
+var h9=_n('view')
+_rz(z,h9,'class',10,e,s,gg)
+var o0=_mz(z,'image',['class',11,'src',1],[],e,s,gg)
+_(h9,o0)
+var cAB=_n('view')
+_rz(z,cAB,'class',13,e,s,gg)
+var oBB=_oz(z,14,e,s,gg)
+_(cAB,oBB)
+_(h9,cAB)
+_(c8,h9)
+_(oX,c8)
+var lCB=_mz(z,'scroll-view',['class',15,'scrollX',1],[],e,s,gg)
+var aDB=_v()
+_(lCB,aDB)
+var tEB=function(bGB,eFB,oHB,gg){
+var oJB=_n('view')
+_rz(z,oJB,'class',20,bGB,eFB,gg)
+var fKB=_n('view')
+_rz(z,fKB,'class',21,bGB,eFB,gg)
+var cLB=_mz(z,'image',['class',22,'src',1],[],bGB,eFB,gg)
+_(fKB,cLB)
+var hMB=_n('view')
+_rz(z,hMB,'class',24,bGB,eFB,gg)
+var oNB=_oz(z,25,bGB,eFB,gg)
+_(hMB,oNB)
+_(fKB,hMB)
+var cOB=_mz(z,'trailer-stars',['bind:__l',26,'innerScore',1,'showNum',2,'vueId',3],[],bGB,eFB,gg)
+_(fKB,cOB)
+_(oJB,fKB)
+_(oHB,oJB)
+return oHB
+}
+aDB.wxXCkey=4
+_2z(z,19,tEB,e,s,gg,aDB,'hotSuperHero','__i1__','')
+_(oX,lCB)
+var oPB=_n('view')
+_rz(z,oPB,'class',30,e,s,gg)
+var lQB=_n('view')
+_rz(z,lQB,'class',31,e,s,gg)
+var aRB=_mz(z,'image',['class',32,'src',1],[],e,s,gg)
+_(lQB,aRB)
+var tSB=_n('view')
+_rz(z,tSB,'class',34,e,s,gg)
+var eTB=_oz(z,35,e,s,gg)
+_(tSB,eTB)
+_(lQB,tSB)
+_(oPB,lQB)
+_(oX,oPB)
+var bUB=_n('view')
+_rz(z,bUB,'class',36,e,s,gg)
+var oVB=_v()
+_(bUB,oVB)
+var xWB=function(fYB,oXB,cZB,gg){
+var o2B=_mz(z,'video',['class',40,'poster',1,'src',2],[],fYB,oXB,gg)
+_(cZB,o2B)
+return cZB
+}
+oVB.wxXCkey=2
+_2z(z,39,xWB,e,s,gg,oVB,'trailer','__i2__','')
+_(oX,bUB)
+var c3B=_n('view')
+_rz(z,c3B,'class',43,e,s,gg)
+var o4B=_n('view')
+_rz(z,o4B,'class',44,e,s,gg)
+var l5B=_mz(z,'image',['class',45,'src',1],[],e,s,gg)
+_(o4B,l5B)
+var a6B=_n('view')
+_rz(z,a6B,'class',47,e,s,gg)
+var t7B=_oz(z,48,e,s,gg)
+_(a6B,t7B)
+_(o4B,a6B)
+_(c3B,o4B)
+_(oX,c3B)
+var e8B=_n('view')
+_rz(z,e8B,'class',49,e,s,gg)
+var b9B=_v()
+_(e8B,b9B)
+var o0B=function(oBC,xAC,fCC,gg){
+var hEC=_n('view')
+_rz(z,hEC,'class',53,oBC,xAC,gg)
+var oFC=_mz(z,'image',['class',54,'src',1],[],oBC,xAC,gg)
+_(hEC,oFC)
+var cGC=_n('view')
+_rz(z,cGC,'class',56,oBC,xAC,gg)
+var oHC=_n('view')
+_rz(z,oHC,'class',57,oBC,xAC,gg)
+var lIC=_oz(z,58,oBC,xAC,gg)
+_(oHC,lIC)
+_(cGC,oHC)
+var aJC=_mz(z,'trailer-stars',['bind:__l',59,'innerScore',1,'showNum',2,'vueId',3],[],oBC,xAC,gg)
+_(cGC,aJC)
+var tKC=_n('view')
+_rz(z,tKC,'class',63,oBC,xAC,gg)
+var eLC=_oz(z,64,oBC,xAC,gg)
+_(tKC,eLC)
+_(cGC,tKC)
+var bMC=_n('view')
+_rz(z,bMC,'class',65,oBC,xAC,gg)
+var oNC=_oz(z,66,oBC,xAC,gg)
+_(bMC,oNC)
+_(cGC,bMC)
+_(hEC,cGC)
+var xOC=_mz(z,'view',['bindtap',67,'class',1,'data-event-opts',2,'data-gIndex',3],[],oBC,xAC,gg)
+var oPC=_mz(z,'image',['class',71,'src',1],[],oBC,xAC,gg)
+_(xOC,oPC)
+var fQC=_n('view')
+_rz(z,fQC,'class',73,oBC,xAC,gg)
+var cRC=_oz(z,74,oBC,xAC,gg)
+_(fQC,cRC)
+_(xOC,fQC)
+var hSC=_mz(z,'view',['animation',75,'class',1],[],oBC,xAC,gg)
+var oTC=_oz(z,77,oBC,xAC,gg)
+_(hSC,oTC)
+_(xOC,hSC)
+_(hEC,xOC)
+_(fCC,hEC)
+return fCC
+}
+b9B.wxXCkey=4
+_2z(z,52,o0B,e,s,gg,b9B,'guess','gIndex','')
+_(oX,e8B)
+_(r,oX)
 return r
 }
 e_[x[2]]={f:m2,j:[],i:[],ti:[],ic:[]}
+d_[x[3]]={}
+var m3=function(e,s,r,gg){
+var z=gz$gwx_4()
+var oVC=_n('view')
+var lWC=_oz(z,0,e,s,gg)
+_(oVC,lWC)
+_(r,oVC)
+return r
+}
+e_[x[3]]={f:m3,j:[],i:[],ti:[],ic:[]}
+d_[x[4]]={}
+var m4=function(e,s,r,gg){
+var z=gz$gwx_5()
+var tYC=_n('view')
+_rz(z,tYC,'class',0,e,s,gg)
+var eZC=_n('view')
+_rz(z,eZC,'class',1,e,s,gg)
+var b1C=_mz(z,'video',['controls',-1,'class',2,'id',1,'poster',2,'src',3],[],e,s,gg)
+_(eZC,b1C)
+_(tYC,eZC)
+var o2C=_n('view')
+_rz(z,o2C,'class',6,e,s,gg)
+var x3C=_n('navigator')
+_rz(z,x3C,'url',7,e,s,gg)
+var o4C=_mz(z,'image',['class',8,'src',1],[],e,s,gg)
+_(x3C,o4C)
+_(o2C,x3C)
+var f5C=_n('view')
+_rz(z,f5C,'class',10,e,s,gg)
+var c6C=_n('view')
+_rz(z,c6C,'class',11,e,s,gg)
+var h7C=_oz(z,12,e,s,gg)
+_(c6C,h7C)
+_(f5C,c6C)
+var o8C=_n('view')
+_rz(z,o8C,'class',13,e,s,gg)
+var c9C=_oz(z,14,e,s,gg)
+_(o8C,c9C)
+_(f5C,o8C)
+var o0C=_n('view')
+_rz(z,o0C,'class',15,e,s,gg)
+var lAD=_oz(z,16,e,s,gg)
+_(o0C,lAD)
+_(f5C,o0C)
+var aBD=_n('view')
+_rz(z,aBD,'class',17,e,s,gg)
+var tCD=_oz(z,18,e,s,gg)
+_(aBD,tCD)
+_(f5C,aBD)
+var eDD=_n('view')
+_rz(z,eDD,'class',19,e,s,gg)
+var bED=_oz(z,20,e,s,gg)
+_(eDD,bED)
+_(f5C,eDD)
+var oFD=_n('view')
+_rz(z,oFD,'class',21,e,s,gg)
+var xGD=_n('view')
+_rz(z,xGD,'class',22,e,s,gg)
+var oHD=_n('view')
+_rz(z,oHD,'class',23,e,s,gg)
+var fID=_oz(z,24,e,s,gg)
+_(oHD,fID)
+_(xGD,oHD)
+var cJD=_n('view')
+_rz(z,cJD,'class',25,e,s,gg)
+var hKD=_oz(z,26,e,s,gg)
+_(cJD,hKD)
+_(xGD,cJD)
+_(oFD,xGD)
+var oLD=_n('view')
+_rz(z,oLD,'class',27,e,s,gg)
+var cMD=_v()
+_(oLD,cMD)
+if(_oz(z,28,e,s,gg)){cMD.wxVkey=1
+var oND=_mz(z,'trailer-stars',['bind:__l',29,'innerScore',1,'showNum',2,'vueId',3],[],e,s,gg)
+_(cMD,oND)
+}
+var lOD=_n('view')
+_rz(z,lOD,'class',33,e,s,gg)
+var aPD=_oz(z,34,e,s,gg)
+_(lOD,aPD)
+_(oLD,lOD)
+cMD.wxXCkey=1
+cMD.wxXCkey=3
+_(oFD,oLD)
+_(f5C,oFD)
+_(o2C,f5C)
+_(tYC,o2C)
+var tQD=_n('view')
+_rz(z,tQD,'class',35,e,s,gg)
+var eRD=_n('view')
+_rz(z,eRD,'class',36,e,s,gg)
+_(tQD,eRD)
+_(tYC,tQD)
+var bSD=_n('view')
+_rz(z,bSD,'class',37,e,s,gg)
+var oTD=_n('view')
+_rz(z,oTD,'class',38,e,s,gg)
+var xUD=_oz(z,39,e,s,gg)
+_(oTD,xUD)
+_(bSD,oTD)
+var oVD=_n('view')
+_rz(z,oVD,'class',40,e,s,gg)
+var fWD=_oz(z,41,e,s,gg)
+_(oVD,fWD)
+_(bSD,oVD)
+_(tYC,bSD)
+var cXD=_n('view')
+_rz(z,cXD,'class',42,e,s,gg)
+var hYD=_n('view')
+_rz(z,hYD,'class',43,e,s,gg)
+var oZD=_oz(z,44,e,s,gg)
+_(hYD,oZD)
+_(cXD,hYD)
+var c1D=_mz(z,'scroll-view',['scrollX',-1,'class',45],[],e,s,gg)
+var o2D=_v()
+_(c1D,o2D)
+var l3D=function(t5D,a4D,e6D,gg){
+var o8D=_n('view')
+_rz(z,o8D,'class',49,t5D,a4D,gg)
+var x9D=_mz(z,'image',['bindtap',50,'class',1,'data-event-opts',2,'data-staffIndex',3,'mode',4,'src',5],[],t5D,a4D,gg)
+_(o8D,x9D)
+var o0D=_n('view')
+_rz(z,o0D,'class',56,t5D,a4D,gg)
+var fAE=_oz(z,57,t5D,a4D,gg)
+_(o0D,fAE)
+_(o8D,o0D)
+var cBE=_n('view')
+_rz(z,cBE,'class',58,t5D,a4D,gg)
+var hCE=_oz(z,59,t5D,a4D,gg)
+_(cBE,hCE)
+_(o8D,cBE)
+_(e6D,o8D)
+return e6D
+}
+o2D.wxXCkey=2
+_2z(z,48,l3D,e,s,gg,o2D,'director','staffIndex','')
+var oDE=_v()
+_(c1D,oDE)
+var cEE=function(lGE,oFE,aHE,gg){
+var eJE=_n('view')
+_rz(z,eJE,'class',63,lGE,oFE,gg)
+var bKE=_mz(z,'image',['bindtap',64,'class',1,'data-event-opts',2,'data-staffIndex',3,'mode',4,'src',5],[],lGE,oFE,gg)
+_(eJE,bKE)
+var oLE=_n('view')
+_rz(z,oLE,'class',70,lGE,oFE,gg)
+var xME=_oz(z,71,lGE,oFE,gg)
+_(oLE,xME)
+_(eJE,oLE)
+var oNE=_n('view')
+_rz(z,oNE,'class',72,lGE,oFE,gg)
+var fOE=_oz(z,73,lGE,oFE,gg)
+_(oNE,fOE)
+_(eJE,oNE)
+_(aHE,eJE)
+return aHE
+}
+oDE.wxXCkey=2
+_2z(z,62,cEE,e,s,gg,oDE,'actor','actorIndex','')
+_(cXD,c1D)
+_(tYC,cXD)
+var cPE=_n('view')
+_rz(z,cPE,'class',74,e,s,gg)
+var hQE=_n('view')
+_rz(z,hQE,'class',75,e,s,gg)
+var oRE=_oz(z,76,e,s,gg)
+_(hQE,oRE)
+_(cPE,hQE)
+var cSE=_mz(z,'scroll-view',['scrollX',-1,'class',77],[],e,s,gg)
+var oTE=_v()
+_(cSE,oTE)
+var lUE=function(tWE,aVE,eXE,gg){
+var oZE=_mz(z,'image',['bindtap',81,'class',1,'data-event-opts',2,'data-imgIndex',3,'mode',4,'src',5],[],tWE,aVE,gg)
+_(eXE,oZE)
+return eXE
+}
+oTE.wxXCkey=2
+_2z(z,80,lUE,e,s,gg,oTE,'img','imgIndex','')
+_(cPE,cSE)
+_(tYC,cPE)
+_(r,tYC)
+return r
+}
+e_[x[4]]={f:m4,j:[],i:[],ti:[],ic:[]}
+d_[x[5]]={}
+var m5=function(e,s,r,gg){
+var z=gz$gwx_6()
+var o2E=_n('view')
+_rz(z,o2E,'class',0,e,s,gg)
+var f3E=_n('view')
+_rz(z,f3E,'class',1,e,s,gg)
+var c4E=_n('view')
+_rz(z,c4E,'class',2,e,s,gg)
+var h5E=_mz(z,'image',['class',3,'src',1],[],e,s,gg)
+_(c4E,h5E)
+_(f3E,c4E)
+var o6E=_mz(z,'input',['bindconfirm',5,'class',1,'confirmType',2,'data-event-opts',3,'maxlength',4,'placeholder',5],[],e,s,gg)
+_(f3E,o6E)
+_(o2E,f3E)
+var c7E=_n('view')
+_rz(z,c7E,'class',11,e,s,gg)
+var o8E=_v()
+_(c7E,o8E)
+var l9E=function(tAF,a0E,eBF,gg){
+var oDF=_n('view')
+_rz(z,oDF,'class',15,tAF,a0E,gg)
+var xEF=_mz(z,'image',['bindtap',16,'class',1,'data-event-opts',2,'data-trailerId',3,'src',4],[],tAF,a0E,gg)
+_(oDF,xEF)
+_(eBF,oDF)
+return eBF
+}
+o8E.wxXCkey=2
+_2z(z,14,l9E,e,s,gg,o8E,'trailer','__i0__','')
+_(o2E,c7E)
+_(r,o2E)
+return r
+}
+e_[x[5]]={f:m5,j:[],i:[],ti:[],ic:[]}
 if(path&&e_[path]){
 window.__wxml_comp_version__=0.02
 return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
@@ -1169,7 +1770,7 @@ var setCssToHead = function(file, _xcInvalid, info) {
 var Ca = {};
 var css_id;
 var info = info || {};
-var _C= [[[2,1],],[],];
+var _C= [[[2,1],],[".",[1],"page{ width: 100%; height: 100%; background-color: #f7f7f7; }\n.",[1],"page-block{ background-color: #FFFFFF; }\n",],];
 function makeup(file, opt) {
 var _n = typeof(file) === "number";
 if ( _n && Ca.hasOwnProperty(file)) return "";
@@ -1238,13 +1839,22 @@ setCssToHead([])();setCssToHead([[2,0]],undefined,{path:"./app.wxss"})();
 __wxAppCode__['app.wxss']=setCssToHead([[2,0]],undefined,{path:"./app.wxss"});    
 __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 
-__wxAppCode__['pages/index/index.wxss']=undefined;    
+__wxAppCode__['components/trailerStars.wxss']=setCssToHead([".",[1],"movie-score-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; }\n.",[1],"star-icon { width: ",[0,20],"; height: ",[0,20],"; margin-top: ",[0,6],"; }\n.",[1],"movie-score { font-size: 12px; color: grey; margin-left: ",[0,8],"; }\n",],undefined,{path:"./components/trailerStars.wxss"});    
+__wxAppCode__['components/trailerStars.wxml']=$gwx('./components/trailerStars.wxml');
+
+__wxAppCode__['pages/cover/cover.wxss']=setCssToHead([".",[1],"black { background-color: #000000; width: 100%; height: 100%; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: fixed; }\n.",[1],"cover { -webkit-align-self: center; -ms-flex-item-align: center; align-self: center; }\n",],undefined,{path:"./pages/cover/cover.wxss"});    
+__wxAppCode__['pages/cover/cover.wxml']=$gwx('./pages/cover/cover.wxml');
+
+__wxAppCode__['pages/index/index.wxss']=setCssToHead([".",[1],"carousel { width: 100%; height: ",[0,440],"; }\n.",[1],"super-hot { margin-top: ",[0,12],"; padding: ",[0,20],"; }\n.",[1],"hot-title-wapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; }\n.",[1],"hot-icon { width: ",[0,30],"; height: ",[0,30],"; margin-top: ",[0,15],"; }\n.",[1],"hot-title { font-size: 20px; margin-left: ",[0,20],"; font-weight: bold; }\n.",[1],"hot { width: 100%; white-space: nowrap; }\n.",[1],"single-poster { display: inline-block; margin-left: ",[0,20],"; }\n.",[1],"poster-wapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }\n.",[1],"poster { width: ",[0,200],"; height: ",[0,270],"; }\n.",[1],"movie-name { width: ",[0,200],"; margin-top: ",[0,10],"; font-size: 14px; font-weight: bold; white-space: nowrap; overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis; }\n.",[1],"hot-movie { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; padding: ",[0,0]," ",[0,20]," ",[0,20]," ",[0,20],"; }\n.",[1],"hot-movie-single { width: ",[0,350],"; height: ",[0,220],"; margin-top: ",[0,10],"; }\n.",[1],"guess-u-like { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }\n.",[1],"sigle-like-movie { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-flow: row; -ms-flex-flow: row; flex-flow: row; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; padding: ",[0,30]," ",[0,20],"; }\n.",[1],"like-movie { width: ",[0,180],"; height: ",[0,240],"; border-radius: 3%; }\n.",[1],"moive-desc { width: ",[0,340],"; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }\n.",[1],"moive-title { white-space: nowrap; overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis; font-size: 16px; font-weight:600; }\n.",[1],"moive-info { color: gray; font-size: 14px; }\n.",[1],"moive-oper { width: ",[0,140],"; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; border-left: dashed 2x; border-left-color: #dbdbba; }\n.",[1],"praise-ico { width: ",[0,40],"; height: ",[0,40],"; -webkit-align-self: center; -ms-flex-item-align: center; align-self: center; }\n.",[1],"praise-me { font-size: 14px; color: #feab2a; -webkit-align-self: center; -ms-flex-item-align: center; align-self: center; }\n.",[1],"animation-opacity{ font-weight: bold; opacity: 0; }\n",],undefined,{path:"./pages/index/index.wxss"});    
 __wxAppCode__['pages/index/index.wxml']=$gwx('./pages/index/index.wxml');
 
 __wxAppCode__['pages/me/me.wxss']=undefined;    
 __wxAppCode__['pages/me/me.wxml']=$gwx('./pages/me/me.wxml');
 
-__wxAppCode__['pages/search/search.wxss']=undefined;    
+__wxAppCode__['pages/movie/movie.wxss']=setCssToHead([".",[1],"player { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; background-color: black; }\n.",[1],"movie { width: 100%; height: ",[0,440],"; }\n.",[1],"movie-info { padding: ",[0,40]," ",[0,20],"; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; background-color: #f7f4f9; }\n.",[1],"cover { width: ",[0,280],"; height: ",[0,380],"; }\n.",[1],"movie-desc { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; margin-left: ",[0,30],"; width: ",[0,400],"; }\n.",[1],"title { font-size: 30px; }\n.",[1],"basic-info { color: darkgray; font-size: 13px; line-height: ",[0,36],"; white-space: nowrap; overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis; }\n.",[1],"score-block { background-color: white; margin-top: ",[0,20],"; width: ",[0,360],"; height: ",[0,90],"; padding: ",[0,20],"; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: start; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start; -webkit-box-shadow: 3px 2px 10px #dedede; box-shadow: 3px 2px 10px #dedede; }\n.",[1],"score-words { font-size: 12px; color: grey; }\n.",[1],"movie-score { font-size: 26px; font-weight: bold; margin-left: ",[0,8],"; color: #FEAB2A; line-height: ",[0,60],"; }\n.",[1],"prise-counts { font-size: 12px; color: grey; line-height: ",[0,44],"; }\n.",[1],"plots-block { background-color: #f7f4f9; padding: ",[0,20]," ",[0,40],"; }\n.",[1],"plots-title { color: #A9A9A9; font-size: 14px; }\n.",[1],"plots-desc { margin-top: ",[0,10],"; font-size: 16px; }\n.",[1],"scroll-block { background-color: #f7f4f9; padding: ",[0,20]," ",[0,40],"; }\n.",[1],"scroll-list { width: 100%; white-space: nowrap; margin-top: ",[0,20],"; }\n.",[1],"plot-image { width: ",[0,220],"; height: ",[0,320],"; margin-right: ",[0,10],"; }\n.",[1],"single-actor { width: ",[0,170],"; height: ",[0,240],"; margin-right: ",[0,10],"; }\n.",[1],"actor-wapper { display: inline-block; }\n.",[1],"actor-name { width: ",[0,170],"; text-align: center; font-size: 15px; white-space: nowrap; overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis; }\n.",[1],"actor-role { width: ",[0,170],"; text-align: center; font-size: 13px; color: #A9A9A9; white-space: nowrap; overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis; }\n",],undefined,{path:"./pages/movie/movie.wxss"});    
+__wxAppCode__['pages/movie/movie.wxml']=$gwx('./pages/movie/movie.wxml');
+
+__wxAppCode__['pages/search/search.wxss']=setCssToHead([".",[1],"search-ico { width: ",[0,40],"; height: ",[0,40],"; }\n.",[1],"search-text { font-size: 14px; background-color: #eaeaea; height: ",[0,60],"; width: ",[0,650],"; }\n.",[1],"search-block { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; padding: ",[0,0]," ",[0,20]," ",[0,20]," ",[0,20],"; position: fixed; top: 100; z-index: 2000; background-color: #F8F8F8; }\n.",[1],"search-ico-wapper { background-color: #eaeaea; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; padding: ",[0,0]," ",[0,10],"; }\n.",[1],"poster { width: ",[0,200],"; height: ",[0,270],"; }\n.",[1],"movie-list { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: start; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; padding: ",[0,100]," ",[0,10]," ",[0,0]," ",[0,10],"; }\n.",[1],"movie-wapper { padding: ",[0,10]," ",[0,20],"; }\n",],undefined,{path:"./pages/search/search.wxss"});    
 __wxAppCode__['pages/search/search.wxml']=$gwx('./pages/search/search.wxml');
 
 ;var __pageFrameEndTime__ = Date.now();

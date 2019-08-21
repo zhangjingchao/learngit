@@ -19,6 +19,21 @@
 		}
 	    ,{
             "path" : "pages/movie/movie",
+            "style" : {
+				"app-plus":{
+					"titleNView":{
+						"type":"transparent",
+                        "buttons" : [
+                            {
+                                "type" : "share"
+                            }
+                        ]
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/cover/cover",
             "style" : {}
         }
     ],
