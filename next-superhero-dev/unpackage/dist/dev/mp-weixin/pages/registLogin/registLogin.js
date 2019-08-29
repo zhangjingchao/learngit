@@ -234,7 +234,6 @@ var _default =
     wxLogin: function wxLogin(e) {
       var me = this;
       console.log(e);
-      debugger;
       // 通过微信开发能力，获得微信用户的基本信息
       var userInfo = e.detail.userInfo;
 
@@ -258,7 +257,7 @@ var _default =
             method: "POST",
             success: function success(userResult) {
               console.log(userResult);
-              var userInfo = userResult.data.data;
+              var userInfo = userResult.data;
               // 保存用户信息到全局的缓存中
               uni.setStorageSync("globalUser", userInfo);
               // 切换页面跳转，使用tab切换的api

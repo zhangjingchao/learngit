@@ -8,13 +8,23 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ 4);
+/* WEBPACK VAR INJECTION */(function(uni, createApp) {__webpack_require__(/*! uni-pages */ 4);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 5));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 _vue.default.config.productionTip = false;
-_vue.default.prototype.serverUrl = "http://39.96.44.100:8080"; // 生产环境
-//Vue.prototype.serverUrl = "http://localhost:8080"; // 开发环境
+//Vue.prototype.serverUrl = "http://39.96.44.100:8080";			// 生产环境
+_vue.default.prototype.serverUrl = "http://localhost:8080"; // 开发环境
+
+// 用户信息
+_vue.default.prototype.getGlobalUser = function (key) {
+  var userInfo = uni.getStorageSync("globalUser");
+  if (userInfo != null && userInfo != "" && userInfo != undefined) {
+    return userInfo;
+  } else {
+    return null;
+  }
+};
 
 _App.default.mpType = 'app';
 
@@ -22,7 +32,7 @@ var app = new _vue.default(_objectSpread({},
 _App.default));
 
 createApp(app).$mount();
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createApp"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createApp"]))
 
 /***/ }),
 
@@ -1606,23 +1616,6 @@ function normalizeComponent (
   }
 }
 
-
-/***/ }),
-
-/***/ 104:
-/*!**************************************************************************************************!*\
-  !*** D:/app/workspace/learngit/learngit/next-superhero-dev/main.js?{"page":"pages%2Fsex%2Fsex"} ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _sex = _interopRequireDefault(__webpack_require__(/*! ./pages/sex/sex.vue */ 105));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_sex.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
@@ -7720,7 +7713,7 @@ createPage(_registLogin.default);
 
 /***/ }),
 
-/***/ 74:
+/***/ 59:
 /*!********************************************************************************************************!*\
   !*** D:/app/workspace/learngit/learngit/next-superhero-dev/main.js?{"page":"pages%2FmeInfo%2FmeInfo"} ***!
   \********************************************************************************************************/
@@ -7731,13 +7724,13 @@ createPage(_registLogin.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _meInfo = _interopRequireDefault(__webpack_require__(/*! ./pages/meInfo/meInfo.vue */ 75));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _meInfo = _interopRequireDefault(__webpack_require__(/*! ./pages/meInfo/meInfo.vue */ 60));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_meInfo.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 80:
+/***/ 67:
 /*!********************************************************************************************************!*\
   !*** D:/app/workspace/learngit/learngit/next-superhero-dev/main.js?{"page":"pages%2FmeFace%2FmeFace"} ***!
   \********************************************************************************************************/
@@ -7748,13 +7741,13 @@ createPage(_meInfo.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _meFace = _interopRequireDefault(__webpack_require__(/*! ./pages/meFace/meFace.vue */ 81));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _meFace = _interopRequireDefault(__webpack_require__(/*! ./pages/meFace/meFace.vue */ 68));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_meFace.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 86:
+/***/ 75:
 /*!****************************************************************************************************************!*\
   !*** D:/app/workspace/learngit/learngit/next-superhero-dev/main.js?{"page":"pages%2FmeBirthday%2FmeBirthday"} ***!
   \****************************************************************************************************************/
@@ -7765,13 +7758,13 @@ createPage(_meFace.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _meBirthday = _interopRequireDefault(__webpack_require__(/*! ./pages/meBirthday/meBirthday.vue */ 87));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _meBirthday = _interopRequireDefault(__webpack_require__(/*! ./pages/meBirthday/meBirthday.vue */ 76));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_meBirthday.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 92:
+/***/ 83:
 /*!****************************************************************************************************************!*\
   !*** D:/app/workspace/learngit/learngit/next-superhero-dev/main.js?{"page":"pages%2FmeNickname%2FmeNickname"} ***!
   \****************************************************************************************************************/
@@ -7782,13 +7775,13 @@ createPage(_meBirthday.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _meNickname = _interopRequireDefault(__webpack_require__(/*! ./pages/meNickname/meNickname.vue */ 93));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _meNickname = _interopRequireDefault(__webpack_require__(/*! ./pages/meNickname/meNickname.vue */ 84));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_meNickname.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 98:
+/***/ 91:
 /*!************************************************************************************************************!*\
   !*** D:/app/workspace/learngit/learngit/next-superhero-dev/main.js?{"page":"pages%2FfaceCrop%2FfaceCrop"} ***!
   \************************************************************************************************************/
@@ -7799,8 +7792,25 @@ createPage(_meNickname.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _faceCrop = _interopRequireDefault(__webpack_require__(/*! ./pages/faceCrop/faceCrop.vue */ 99));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _faceCrop = _interopRequireDefault(__webpack_require__(/*! ./pages/faceCrop/faceCrop.vue */ 92));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_faceCrop.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 99:
+/*!**************************************************************************************************!*\
+  !*** D:/app/workspace/learngit/learngit/next-superhero-dev/main.js?{"page":"pages%2Fsex%2Fsex"} ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _sex = _interopRequireDefault(__webpack_require__(/*! ./pages/sex/sex.vue */ 100));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_sex.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ })
