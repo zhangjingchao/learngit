@@ -15,25 +15,56 @@
 			}
 		}, {
 			"path": "pages/me/me",
-			"style": {}
-		}
-	    ,{
-            "path" : "pages/movie/movie",
-            "style" : {
-				"app-plus":{
-					"titleNView":{
-						"type":"transparent",
-                        "buttons" : [
-                            {
-                                "type" : "share"
-                            }
-                        ]
+			"style": {
+				"app-plus": {
+					"titleNView": false //禁用原生导航栏
+				},
+				"navigationBarTextStyle": "white",
+				"navigationBarTitleText": "我的",
+				"navigationBarBackgroundColor": "#ffd655"
+			}
+		}, {
+			"path": "pages/movie/movie",
+			"style": {
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent",
+						"buttons": [{
+							"type": "share"
+						}]
 					}
 				}
 			}
+		}, {
+			"path": "pages/cover/cover",
+			"style": {}
+		}
+	    ,{
+            "path" : "pages/registLogin/registLogin",
+            "style" : {}
         }
         ,{
-            "path" : "pages/cover/cover",
+            "path" : "pages/meInfo/meInfo",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/meFace/meFace",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/meBirthday/meBirthday",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/meNickname/meNickname",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/faceCrop/faceCrop",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/sex/sex",
             "style" : {}
         }
     ],

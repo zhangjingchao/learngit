@@ -3,7 +3,9 @@
 		<!-- 轮播图 start -->
 		<swiper :indicator-dots="true" :autoplay="true" class="carousel">
 			<swiper-item v-for="carousel in carouselList">
-				<image :src="carousel.poster" class="carousel"></image>
+				<navigator open-type="navigate" :url="'../movie/movie?trailerId=' + carousel.id">
+					<image :src="carousel.poster" class="carousel"></image>
+				</navigator>
 			</swiper-item>
 		</swiper>
 		<!-- 轮播图 end -->
@@ -20,20 +22,12 @@
 		<scroll-view scroll-x="true" class="page-block hot">
 			<view class="single-poster" v-for="hotSuperHero in hotSuperHeroList">
 				<view class="poster-wapper">
-					<image :src="hotSuperHero.cover" class="poster"></image>
+					<navigator open-type="navigate" :url="'../movie/movie?trailerId=' + hotSuperHero.id">
+						<image :src="hotSuperHero.cover" class="poster"></image>
+					</navigator>
 					<view class="movie-name">
 						{{hotSuperHero.name}}
 					</view>
-					<!-- <view class="movie-score-wrapper">
-						<image src="../../static/icos/star-yellow.png" class="star-icon"></image>
-						<image src="../../static/icos/star-yellow.png" class="star-icon"></image>
-						<image src="../../static/icos/star-yellow.png" class="star-icon"></image>
-						<image src="../../static/icos/star-yellow.png" class="star-icon"></image>
-						<image src="../../static/icos/star-yellow.png" class="star-icon"></image>
-						<view class="movie-score">
-							9.1
-						</view>
-					</view> -->
 					<trailer-stars :innerScore="hotSuperHero.score" showNum="1"></trailer-stars>
 				</view>
 			</view>
@@ -50,7 +44,8 @@
 			</view>
 		</view>
 		<view class="hot-movie page-block">
-			<video v-for="trailer in hotTrailerList" :src="trailer.trailer" :poster="trailer.poster" class="hot-movie-single"></video>
+			<video :id="trailer.id" :data-playingindex="trailer.id" @play="meIsPlaying" v-for="trailer in hotTrailerList" :src="trailer.trailer"
+			 :poster="trailer.poster" class="hot-movie-single"></video>
 		</view>
 		<!-- 热门预告  end -->
 
@@ -65,7 +60,9 @@
 		</view>
 		<view class="page-block guess-u-like">
 			<view v-for="(guess,gIndex) in guessULikeList" class="sigle-like-movie">
-				<image :src="guess.cover" class="like-movie"></image>
+				<navigator open-type="navigate" :url="'../movie/movie?trailerId=' + guess.id">
+					<image :src="guess.cover" class="like-movie"></image>
+				</navigator>
 				<view class="moive-desc">
 					<view class="moive-title">
 						{{guess.name}}
@@ -119,6 +116,11 @@
 		onPullDownRefresh() {
 			this.refresh();
 		},
+		onHide() {
+			if (this.videoContext) {
+				this.videoContext.pause();
+			}
+		},
 		onLoad() {
 			var me = this;
 
@@ -170,7 +172,7 @@
 					}
 				}
 			});
-			
+
 			me.refresh();
 		},
 		methods: {
@@ -178,11 +180,11 @@
 			refresh() {
 				var me = this;
 				uni.showLoading({
-					mask:true
+					mask: true
 				});
-				
+
 				uni.showNavigationBarLoading();
-				
+
 				//中获取服务器的地址
 				// 通过挂载到main.js，作为全局变量
 				var serverUrl = me.serverUrl;
@@ -197,7 +199,8 @@
 							var guessULikeList = res.data;
 							me.guessULikeList = guessULikeList;
 						}
-					},complete() {
+					},
+					complete() {
 						uni.stopPullDownRefresh();
 						uni.hideLoading();
 						uni.hideNavigationBarLoading();
@@ -228,6 +231,24 @@
 					this.animationDataArr[gIndex] = this.animationData.export();
 				}.bind(this), 600)
 				// #endif
+			},
+			//播放一个视频的时候，需要暂停其他正在播放的视频
+			meIsPlaying(e) {
+				var me = this;
+				var trailerId = "";
+				if (e) {
+					trailerId = e.currentTarget.dataset.playingindex;
+					me.videoContext = uni.createVideoContext(trailerId);
+				}
+
+				var hotTrailerList = me.hotTrailerList;
+				for (var i = 0; i < hotTrailerList.length; i++) {
+					var tempId = hotTrailerList[i].id;
+					if (tempId != trailerId) {
+						uni.createVideoContext(tempId).pause();
+					}
+
+				}
 			}
 		},
 

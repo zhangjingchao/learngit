@@ -112,10 +112,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var trailerStars = function trailerStars() {return __webpack_require__.e(/*! import() | components/trailerStars */ "components/trailerStars").then(__webpack_require__.bind(null, /*! ../../components/trailerStars.vue */ 41));};var _default =
-
-
-
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var trailerStars = function trailerStars() {return __webpack_require__.e(/*! import() | components/trailerStars */ "components/trailerStars").then(__webpack_require__.bind(null, /*! ../../components/trailerStars.vue */ 59));};var _default =
 
 
 
@@ -233,6 +230,11 @@ __webpack_require__.r(__webpack_exports__);
   onPullDownRefresh: function onPullDownRefresh() {
     this.refresh();
   },
+  onHide: function onHide() {
+    if (this.videoContext) {
+      this.videoContext.pause();
+    }
+  },
   onLoad: function onLoad() {
     var me = this;
 
@@ -311,7 +313,8 @@ __webpack_require__.r(__webpack_exports__);
             var guessULikeList = res.data;
             me.guessULikeList = guessULikeList;
           }
-        }, complete: function complete() {
+        },
+        complete: function complete() {
           uni.stopPullDownRefresh();
           uni.hideLoading();
           uni.hideNavigationBarLoading();
@@ -342,6 +345,24 @@ __webpack_require__.r(__webpack_exports__);
         this.animationDataArr[gIndex] = this.animationData.export();
       }.bind(this), 600);
 
+    },
+    //播放一个视频的时候，需要暂停其他正在播放的视频
+    meIsPlaying: function meIsPlaying(e) {
+      var me = this;
+      var trailerId = "";
+      if (e) {
+        trailerId = e.currentTarget.dataset.playingindex;
+        me.videoContext = uni.createVideoContext(trailerId);
+      }
+
+      var hotTrailerList = me.hotTrailerList;
+      for (var i = 0; i < hotTrailerList.length; i++) {
+        var tempId = hotTrailerList[i].id;
+        if (tempId != trailerId) {
+          uni.createVideoContext(tempId).pause();
+        }
+
+      }
     } },
 
 

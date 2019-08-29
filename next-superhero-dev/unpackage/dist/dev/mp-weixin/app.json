@@ -4,7 +4,14 @@
     "pages/search/search",
     "pages/me/me",
     "pages/movie/movie",
-    "pages/cover/cover"
+    "pages/cover/cover",
+    "pages/registLogin/registLogin",
+    "pages/meInfo/meInfo",
+    "pages/meFace/meFace",
+    "pages/meBirthday/meBirthday",
+    "pages/meNickname/meNickname",
+    "pages/faceCrop/faceCrop",
+    "pages/sex/sex"
   ],
   "subPackages": [],
   "window": {

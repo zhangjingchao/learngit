@@ -18,6 +18,8 @@
     "url": ""
   },
   "permissions": {
+    "Share": {},
+    "VideoPlayer": {},
     "UniNView": {
       "description": "UniNView原生渲染"
     }
@@ -72,6 +74,11 @@
       },
       "apple": {},
       "plugins": {
+        "share": {
+          "weixin": {
+            "appid": "123"
+          }
+        },
         "audio": {
           "mp3": {
             "description": "Android平台录音支持MP3格式文件"
@@ -87,7 +94,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.2.1",
+      "compilerVersion": "2.2.2",
       "control": "v8",
       "nvueCompiler": "weex",
       "renderer": "auto"
