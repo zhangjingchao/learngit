@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="text_click_point_sizes">
+        <item>小</item>
+        <item>正常</item>
+        <item>大</item>
+    </string-array>
+    <string-array name="text_control_panel_sizes">
+        <item>小</item>
+        <item>正常</item>
+        <item>大</item>
+    </string-array>
+</resources>

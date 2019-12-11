@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout n1:layout_width="fill_parent" n1:layout_height="wrap_content"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <TextView n1:textSize="18.0sp" n1:textColor="@color/textColorPrimary" n1:gravity="left" n1:id="@id/tv_name" n1:layout_width="0.0dip" n1:layout_height="wrap_content" n1:layout_marginStart="8.0dip" n2:layout_constraintBottom_toBottomOf="parent" n2:layout_constraintEnd_toStartOf="@id/bt_load" n2:layout_constraintStart_toStartOf="parent" n2:layout_constraintTop_toTopOf="parent" xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <Button n1:id="@id/bt_load" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/button_config_load" n3:layout_constraintEnd_toStartOf="@id/bt_del" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <Button n1:id="@id/bt_del" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/button_config_del" n1:layout_marginEnd="0.0dip" n4:layout_constraintEnd_toEndOf="parent" xmlns:n4="http://schemas.android.com/apk/res-auto" />
+</android.support.constraint.ConstraintLayout>

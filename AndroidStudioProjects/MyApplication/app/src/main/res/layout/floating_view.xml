@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n1:layout_width="fill_parent" n1:layout_height="wrap_content"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <RelativeLayout n1:id="@id/control_panel" n1:background="#20ff00ff" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_alignParentRight="true">
+        <Button n1:id="@id/button1" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="4.0dip" n1:layout_marginTop="4.0dip" n1:text="show" />
+        <Button n1:id="@id/button2" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="4.0dip" n1:layout_marginTop="4.0dip" n1:text="hide" n1:layout_toRightOf="@id/button1" />
+        <Button n1:id="@id/button3" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="4.0dip" n1:layout_marginTop="4.0dip" n1:text="dismiss" n1:layout_toRightOf="@id/button2" />
+        <Button n1:id="@id/button4" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="stop" n1:layout_below="@id/button2" />
+    </RelativeLayout>
+    <RelativeLayout n1:id="@id/working_area" n1:background="#20ff00ff" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content">
+        <TextView n1:id="@id/text" n1:layout_width="wrap_content" n1:layout_height="wrap_content" />
+        <Button n1:id="@id/action" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="ACTION" n1:layout_alignParentRight="true" n1:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <ImageView n1:id="@id/dot1" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:src="@drawable/reddot" />
+    <ImageView n1:id="@id/dot2" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:src="@drawable/reddot" />
+</RelativeLayout>

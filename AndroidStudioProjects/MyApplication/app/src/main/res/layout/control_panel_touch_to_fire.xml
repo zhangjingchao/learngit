@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout n1:id="@id/control_panel" n1:background="@drawable/control_bg" n1:padding="8.0dip" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_alignParentStart="true"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <ImageView n1:id="@id/iv_fire" n1:layout_width="100.0dip" n1:layout_height="100.0dip" n1:src="@drawable/c_outline_play_circle_filled_white_black_48dp" n2:layout_constraintStart_toStartOf="parent" n2:layout_constraintTop_toTopOf="parent" xmlns:n2="http://schemas.android.com/apk/res-auto" />
+</android.support.constraint.ConstraintLayout>

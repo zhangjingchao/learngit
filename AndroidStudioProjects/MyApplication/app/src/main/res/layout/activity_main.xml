@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <!--<android.support.v7.widget.Toolbar n1:id="@id/toolbar" n1:background="@color/colorPrimary" n1:layout_width="fill_parent" n1:layout_height="?actionBarSize" n2:layout_constraintTop_toTopOf="parent" n2:theme="@style/AppTheme" n2:titleTextColor="@color/white" xmlns:n2="http://schemas.android.com/apk/res-auto" />-->
+    <ScrollView n1:layout_width="0.0dip" n1:layout_height="0.0dip" n3:layout_constraintBottom_toTopOf="@id/adView" n3:layout_constraintHeight_default="wrap" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintRight_toRightOf="parent"  xmlns:n3="http://schemas.android.com/apk/res-auto">
+    <!--<ScrollView n1:layout_width="0.0dip" n1:layout_height="0.0dip" n3:layout_constraintBottom_toTopOf="@id/adView" n3:layout_constraintHeight_default="wrap" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintRight_toRightOf="parent" n3:layout_constraintTop_toBottomOf="@id/toolbar" xmlns:n3="http://schemas.android.com/apk/res-auto">-->
+        <LinearLayout n1:orientation="vertical" n1:layout_width="fill_parent" n1:layout_height="wrap_content">
+            <android.support.constraint.ConstraintLayout n1:id="@id/native_ad_container_top" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="0.0dip" n1:layout_centerHorizontal="true" />
+            <LinearLayout n1:orientation="vertical" n1:paddingLeft="20.0dip" n1:paddingRight="20.0dip" n1:layout_width="fill_parent" n1:layout_height="wrap_content">
+                <android.support.constraint.ConstraintLayout n1:id="@id/cl_permission_tips" n1:paddingTop="12.0dip" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content">
+           <!--         <TextView n1:textSize="24.0sp" n1:textColor="#ff000000" n1:id="@id/tv_tip_welcome" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/text_tip_welcome" />
+                    <TextView n1:id="@id/tv_tip1" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/text_tip1" n3:layout_constraintTop_toBottomOf="@id/tv_tip_welcome" />
+                    <TextView n1:id="@id/tv_tip2" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/text_tip2" n3:layout_constraintTop_toBottomOf="@id/tv_tip1" />-->
+                </android.support.constraint.ConstraintLayout>
+                <Button n1:id="@id/button_bootstrap" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/button_bootstarp" n3:layout_constraintLeft_toLeftOf="parent" />
+                <Button n1:id="@id/button1" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/button_permission_accessibility" n3:layout_constraintLeft_toLeftOf="parent" />
+                <Button n1:id="@id/button2" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/button_permission_draw_over" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toBottomOf="@id/button1" />
+                <Button n1:id="@id/button_external_storage" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/button_permission_draw_over" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toBottomOf="@id/button2" />
+                <LinearLayout n1:orientation="horizontal" n1:id="@id/ll_button_show" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n3:layout_constraintLeft_toLeftOf="parent">
+                    <Button n1:theme="@style/MyButton" n1:id="@id/button3" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/button_show_view" n1:layout_weight="1.0" />
+                    <ImageButton n1:id="@id/button_change_panel_skin" n1:visibility="visible" n1:layout_width="wrap_content" n1:layout_height="48.0dip" n1:src="@drawable/skin_48" />
+                </LinearLayout>
+                <Button n1:theme="@style/MyButton" n1:id="@id/button4" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/button_hide_view" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toBottomOf="@id/ll_button_show" />
+                <android.support.constraint.ConstraintLayout n1:id="@id/native_ad_container" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:layout_centerHorizontal="true" />
+                <Button n1:theme="@style/MyButton" n1:id="@id/button5" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/button_go_setting" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toBottomOf="@id/button4" />
+                <Button n1:theme="@style/MyButton" n1:id="@id/button7" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/button_go_save" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toBottomOf="@id/button5" />
+                <android.support.constraint.ConstraintLayout n1:id="@id/cl_cross_app" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:paddingLeft="8.0dip" n1:paddingRight="8.0dip" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toBottomOf="@id/button7">
+                    <TextView n1:textSize="18.0sp" n1:textColor="@color/textColorPrimary" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/text_cross_app" n3:layout_constraintBottom_toBottomOf="parent" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toTopOf="parent" />
+                    <!--<android.support.v7.widget.SwitchCompat n1:id="@id/switch_cross_app" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n3:layout_constraintRight_toRightOf="parent" />-->
+                </android.support.constraint.ConstraintLayout>
+                <android.support.constraint.ConstraintLayout n1:id="@id/cl_ignore_statusbar_height" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:paddingLeft="8.0dip" n1:paddingRight="8.0dip" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toBottomOf="@id/button7">
+                    <TextView n1:textSize="18.0sp" n1:textColor="@color/textColorPrimary" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/text_ignore_statusbar_height" n3:layout_constraintBottom_toBottomOf="parent" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toTopOf="parent" />
+                    <!--<android.support.v7.widget.SwitchCompat n1:id="@id/switch_ignore_statusbar_height" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n3:layout_constraintRight_toRightOf="parent" />-->
+                </android.support.constraint.ConstraintLayout>
+                <Button n1:theme="@style/MyButton" n1:id="@id/button_customising" n1:visibility="visible" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/text_button_customsing" />
+                <LinearLayout n1:orientation="vertical" n1:id="@id/ll_pay" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toBottomOf="@id/button_question_answer">
+                    <Button n1:theme="@style/MyButton" n1:id="@id/button_pay" n1:visibility="visible" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:text="@string/button_pro" />
+                    <TextView n1:textSize="14.0sp" n1:textColor="@color/textColorSecondary" n1:id="@id/tv_tip_price_rise" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginLeft="2.0dip" n1:text="@string/tip_pro_price_raise" n1:layout_marginStart="2.0dip" />
+                </LinearLayout>
+                <Button n1:theme="@style/MyButton" n1:id="@id/button_pro_video_trial" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/button_pro_video_trial" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toBottomOf="@id/ll_pay" />
+                <View n1:background="@color/textColorSecondary" n1:layout_width="fill_parent" n1:layout_height="1.0px" n1:layout_marginTop="8.0dip" />
+                <LinearLayout n1:orientation="vertical" n1:id="@id/ll_click_point_action" n1:paddingLeft="8.0dip" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip">
+                    <TextView n1:textSize="18.0sp" n1:textColor="@color/textColorPrimary" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/text_click_point_edit_action" />
+                    <TextView n1:id="@id/tv_click_point_action" n1:layout_width="wrap_content" n1:layout_height="wrap_content" />
+                </LinearLayout>
+                <View n1:background="@color/textColorSecondary" n1:layout_width="fill_parent" n1:layout_height="1.0px" n1:layout_marginTop="8.0dip" />
+                <Button n1:theme="@style/MyButton" n1:id="@id/button_forum" n1:visibility="visible" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/text_button_forum" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toBottomOf="@id/cl_cross_app" />
+                <Button n1:theme="@style/MyButton" n1:id="@id/button_question_answer" n1:visibility="visible" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:layout_marginBottom="60.0dip" n1:text="@string/button_q_a" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toBottomOf="@id/button_forum" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <FrameLayout n1:id="@id/adView" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n4:layout_constraintBottom_toBottomOf="parent" n4:layout_constraintEnd_toEndOf="parent" n4:layout_constraintStart_toStartOf="parent" xmlns:n4="http://schemas.android.com/apk/res-auto" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout n1:id="@id/control_panel" n1:background="@drawable/control_bg" n1:padding="8.0dip" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_alignParentStart="true"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <ImageView n1:id="@id/iv_start" n1:layout_width="30.0dip" n1:layout_height="30.0dip" n1:src="@drawable/c_outline_play_circle_filled_white_black_48dp" n2:layout_constraintStart_toStartOf="parent" n2:layout_constraintTop_toTopOf="parent" xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <ImageView n1:id="@id/iv_stop" n1:visibility="gone" n1:layout_width="30.0dip" n1:layout_height="30.0dip" n1:src="@drawable/c_outline_pause_circle_outline_black_48dp" n3:layout_constraintStart_toStartOf="parent" n3:layout_constraintTop_toTopOf="parent" xmlns:n3="http://schemas.android.com/apk/res-auto" />
+    <ImageView n1:id="@id/iv_dismiss" n1:layout_width="30.0dip" n1:layout_height="30.0dip" n1:src="@drawable/c_outline_close_black_48dp" n1:layout_marginStart="35.0dip" n4:layout_constraintStart_toStartOf="parent" n4:layout_constraintTop_toTopOf="parent" xmlns:n4="http://schemas.android.com/apk/res-auto" />
+</android.support.constraint.ConstraintLayout>

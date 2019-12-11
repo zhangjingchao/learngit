@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.Toolbar n1:id="@id/toolbar" n1:background="@color/colorPrimary" n1:layout_width="fill_parent" n1:layout_height="?actionBarSize" n1:actionMenuTextColor="@color/white" n2:layout_constraintTop_toTopOf="parent" n2:theme="@style/AppTheme" n2:titleTextColor="@color/white" xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <android.support.constraint.ConstraintLayout n1:paddingLeft="12.0dip" n1:paddingRight="12.0dip" n1:layout_width="0.0dip" n1:layout_height="0.0dip" n1:layout_marginTop="12.0dip" n3:layout_constraintBottom_toBottomOf="parent" n3:layout_constraintEnd_toEndOf="parent" n3:layout_constraintStart_toStartOf="parent" n3:layout_constraintTop_toBottomOf="@id/toolbar" xmlns:n3="http://schemas.android.com/apk/res-auto">
+        <Button n1:id="@id/bt_save" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:text="@string/button_save" />
+        <Button n1:id="@id/bt_reload" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:text="@string/button_reload" n3:layout_constraintTop_toBottomOf="@id/bt_save" />
+        <Button n1:id="@id/bt_save_as_new" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:text="@string/button_save_as_new" n3:layout_constraintTop_toBottomOf="@id/bt_save" />
+        <Button n1:id="@id/button_pay" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:text="@string/button_save_pay" n3:layout_constraintTop_toBottomOf="@id/bt_reload" />
+        <Button n1:theme="@style/MyButton" n1:id="@id/button_pro_video_trial" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:text="@string/button_pro_video_trial" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintTop_toBottomOf="@id/button_pay" />
+        <android.support.v7.widget.RecyclerView n1:id="@id/list" n1:visibility="gone" n1:layout_width="0.0dip" n1:layout_height="0.0dip" n1:layout_marginTop="8.0dip" n3:layout_constraintBottom_toBottomOf="parent" n3:layout_constraintEnd_toEndOf="parent" n3:layout_constraintStart_toStartOf="parent" n3:layout_constraintTop_toBottomOf="@id/bt_save_as_new" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

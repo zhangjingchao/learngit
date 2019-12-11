@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.Toolbar n1:id="@id/toolbar" n1:background="@color/colorPrimary" n1:layout_width="fill_parent" n1:layout_height="?actionBarSize" n2:layout_constraintTop_toTopOf="parent" n2:theme="@style/AppTheme" n2:titleTextColor="@color/white" xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <ScrollView n1:paddingTop="12.0dip" n1:layout_width="0.0dip" n1:layout_height="0.0dip" n3:layout_constraintBottom_toTopOf="@id/adView" n3:layout_constraintLeft_toLeftOf="parent" n3:layout_constraintRight_toRightOf="parent" n3:layout_constraintTop_toBottomOf="@id/toolbar" xmlns:n3="http://schemas.android.com/apk/res-auto">
+        <LinearLayout n1:orientation="vertical" n1:paddingLeft="20.0dip" n1:paddingRight="20.0dip" n1:layout_width="fill_parent" n1:layout_height="wrap_content">
+            <Button n1:id="@id/button1" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/button_permission_accessibility" n3:layout_constraintLeft_toLeftOf="parent" />
+            <LinearLayout n1:orientation="vertical" n1:id="@id/ll_control_panel_size" n1:paddingLeft="8.0dip" n1:visibility="visible" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip">
+                <TextView n1:textSize="18.0sp" n1:textColor="@color/textColorPrimary" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/text_control_panel_size_title" />
+                <TextView n1:id="@id/tv_control_panel_size" n1:layout_width="wrap_content" n1:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout n1:orientation="vertical" n1:id="@id/ll_click_point_size" n1:paddingLeft="8.0dip" n1:visibility="visible" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip">
+                <TextView n1:textSize="18.0sp" n1:textColor="@color/textColorPrimary" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/text_click_point_size_title" />
+                <TextView n1:id="@id/tv_click_point_size" n1:layout_width="wrap_content" n1:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout n1:orientation="vertical" n1:id="@id/ll_language_select" n1:paddingLeft="8.0dip" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip">
+                <TextView n1:textSize="18.0sp" n1:textColor="@color/textColorPrimary" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/text_language_select_title" />
+                <TextView n1:id="@id/ll_language_selected" n1:layout_width="wrap_content" n1:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <FrameLayout n1:id="@id/adView" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n4:layout_constraintBottom_toBottomOf="parent" n4:layout_constraintEnd_toEndOf="parent" n4:layout_constraintStart_toStartOf="parent" xmlns:n4="http://schemas.android.com/apk/res-auto" />
+</android.support.constraint.ConstraintLayout>

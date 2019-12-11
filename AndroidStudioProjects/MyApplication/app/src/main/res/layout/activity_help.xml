@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.Toolbar n1:id="@id/toolbar" n1:background="@color/colorPrimary" n1:layout_width="fill_parent" n1:layout_height="?actionBarSize" n1:actionMenuTextColor="@color/white" n2:layout_constraintTop_toTopOf="parent" n2:theme="@style/AppTheme" n2:titleTextColor="@color/white" xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <ScrollView n1:layout_width="fill_parent" n1:layout_height="0.0dip" n3:layout_constraintBottom_toBottomOf="parent" n3:layout_constraintEnd_toEndOf="parent" n3:layout_constraintStart_toStartOf="parent" n3:layout_constraintTop_toBottomOf="@id/toolbar" xmlns:n3="http://schemas.android.com/apk/res-auto">
+        <LinearLayout n1:orientation="vertical" n1:id="@id/ll_help_top" n1:paddingLeft="12.0dip" n1:paddingTop="0.0dip" n1:paddingRight="12.0dip" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n3:layout_constraintEnd_toEndOf="parent" n3:layout_constraintStart_toStartOf="parent" n3:layout_constraintTop_toBottomOf="@id/toolbar">
+            <LinearLayout n1:orientation="vertical" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="4.0dip">
+                <TextView n1:textSize="20.0sp" n1:textColor="#ff000000" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="付费版本" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="当前版本所有功能均可以免费使用                     \n付费版本可以关闭主界面广告                     \n感谢各位朋友的支持                     \n强烈建议大家不要使用破解版本，因为存在盗用用户信息的可能，毕竟辅助权限能做的事情还是很多的                     \n盗版，破解应用，请自行判断使用风险" />
+                <TextView n1:textSize="20.0sp" n1:textColor="#ff000000" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="论坛支持" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="付费依托于论坛，内容也将逐渐完善。更多问题请到论坛查找解决方案。                     \n希望大家能共同建设，维护论坛的内容。                     \n为了维护论坛健康发展，论坛使用邀请码注册。                     \n分享使用经验，发表高质量帖子送会员啦，长期有效" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="2.0dip" n1:text="论坛地址 https://bbs.zddjq.com" />
+            </LinearLayout>
+            <LinearLayout n1:orientation="vertical" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="4.0dip">
+                <TextView n1:textSize="20.0sp" n1:textColor="#ff000000" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="申请权限说明" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="1.辅助功能权限，实现模拟点击核心权限，不会用来收集你的任何信息，不会记录你的个人信息，更不会使用                     \n2.电话权限，广告SDK需要，本应用不会使用该权限，后续尽量换用不需要该权限的广告联盟                     \n3.位置权限，广告SDK需要，可以不授权" />
+            </LinearLayout>
+            <LinearLayout n1:orientation="vertical" n1:visibility="gone" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="4.0dip">
+                <TextView n1:textSize="20.0sp" n1:textColor="#ff000000" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/help_title_pro" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="@string/help_tip_pro" />
+            </LinearLayout>
+            <LinearLayout n1:orientation="vertical" n1:paddingTop="8.0dip" n1:layout_width="fill_parent" n1:layout_height="wrap_content">
+                <TextView n1:textSize="20.0sp" n1:textColor="#ff000000" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/help_crash_accessibility_title" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="@string/help_crash_accessibility_tip1" />
+                <Button n1:id="@id/bt_help_crash_accessibility_regrant" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:text="@string/help_crash_accessibility_regrant" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="@string/help_tip_crash_force_stop" />
+                <Button n1:id="@id/bt_force_stop" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:text="@string/help_force_stop" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="@string/help_tip_reboot" />
+            </LinearLayout>
+            <LinearLayout n1:orientation="vertical" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip">
+                <TextView n1:textSize="20.0sp" n1:textColor="#ff000000" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/help_tap_speed_title" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="@string/help_tap_speed_tip1" />
+            </LinearLayout>
+            <LinearLayout n1:orientation="vertical" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip">
+                <TextView n1:textSize="20.0sp" n1:textColor="#ff000000" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/help_anr_title" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="@string/help_anr_tip1" />
+            </LinearLayout>
+            <LinearLayout n1:orientation="vertical" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip">
+                <TextView n1:textSize="20.0sp" n1:textColor="#ff000000" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/help_draw_over_title" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="@string/help_draw_over_tip1" />
+            </LinearLayout>
+            <Button n1:id="@id/bt_q_a" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="8.0dip" n1:text="@string/help_q_a" />
+            <View n1:layout_width="fill_parent" n1:layout_height="40.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <android.support.v7.widget.RecyclerView n1:id="@id/recycler_help" n1:paddingLeft="12.0dip" n1:paddingRight="12.0dip" n1:layout_width="0.0dip" n1:layout_height="0.0dip" n4:layout_constraintBottom_toBottomOf="parent" n4:layout_constraintEnd_toEndOf="parent" n4:layout_constraintStart_toStartOf="parent" xmlns:n4="http://schemas.android.com/apk/res-auto" />
+</android.support.constraint.ConstraintLayout>

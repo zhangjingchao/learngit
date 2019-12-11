@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout n1:layout_width="fill_parent" n1:layout_height="fill_parent"
+  xmlns:n1="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.Toolbar n1:id="@id/toolbar" n1:background="@color/colorPrimary" n1:layout_width="fill_parent" n1:layout_height="?actionBarSize" n1:actionMenuTextColor="@color/white" n2:layout_constraintTop_toTopOf="parent" n2:theme="@style/AppTheme" n2:titleTextColor="@color/white" xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <ScrollView n1:layout_width="fill_parent" n1:layout_height="0.0dip" n3:layout_constraintBottom_toBottomOf="parent" n3:layout_constraintEnd_toEndOf="parent" n3:layout_constraintStart_toStartOf="parent" n3:layout_constraintTop_toBottomOf="@id/toolbar" xmlns:n3="http://schemas.android.com/apk/res-auto">
+        <LinearLayout n1:orientation="vertical" n1:id="@id/ll_help_top" n1:paddingLeft="12.0dip" n1:paddingTop="8.0dip" n1:paddingRight="12.0dip" n1:paddingBottom="12.0dip" n1:layout_width="fill_parent" n1:layout_height="wrap_content" n3:layout_constraintEnd_toEndOf="parent" n3:layout_constraintStart_toStartOf="parent" n3:layout_constraintTop_toBottomOf="@id/toolbar">
+            <LinearLayout n1:orientation="vertical" n1:layout_width="fill_parent" n1:layout_height="wrap_content">
+                <TextView n1:textSize="20.0sp" n1:textColor="#ff000000" n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:text="@string/bootstarp_enalbe_permission" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="@string/bootstarp_enalbe_permission_click_button" />
+                <ImageView n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:src="@drawable/bootstrap_button" n1:scaleType="fitXY" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="@string/bootstarp_enalbe_permission_swipe" />
+                <ImageView n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:src="@drawable/bootstrap_app_find" n1:scaleType="fitXY" />
+                <ImageView n1:layout_width="fill_parent" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:src="@drawable/bootstrap_enable" n1:scaleType="fitXY" />
+                <TextView n1:layout_width="wrap_content" n1:layout_height="wrap_content" n1:layout_marginTop="6.0dip" n1:text="@string/bootstarp_enalbe_permission_back" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

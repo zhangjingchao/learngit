@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="dimen_click_point_sizes">
+        <item>@dimen/click_point_size_small</item>
+        <item>@dimen/click_point_size_normal</item>
+        <item>@dimen/click_point_size_large</item>
+    </array>
+    <array name="dimen_control_panel_padding_sizes">
+        <item>@dimen/control_panel_padding_small</item>
+        <item>@dimen/control_panel_padding_normal</item>
+        <item>@dimen/control_panel_padding_normal</item>
+    </array>
+    <array name="dimen_control_panel_sizes">
+        <item>@dimen/control_panel_size_small</item>
+        <item>@dimen/control_panel_size_normal</item>
+        <item>@dimen/control_panel_size_large</item>
+    </array>
+    <string-array name="text_action_type_options">
+        <item>@string/text_action_type_click</item>
+        <item>@string/text_action_type_back</item>
+        <item>@string/text_action_type_home</item>
+        <item>@string/text_action_type_notification</item>
+    </string-array>
+    <string-array name="text_click_point_sizes">
+        <item>小</item>
+        <item>正常</item>
+        <item>大</item>
+    </string-array>
+    <string-array name="text_control_panel_sizes">
+        <item>小</item>
+        <item>正常</item>
+        <item>大</item>
+    </string-array>
+    <string-array name="text_gravity_options">
+        <item>@string/text_gravity_center</item>
+        <item>@string/text_gravity_top_left</item>
+        <item>@string/text_gravity_top_right</item>
+        <item>@string/text_gravity_bottom_left</item>
+        <item>@string/text_gravity_bottom_right</item>
+    </string-array>
+    <string-array name="text_language_options">
+        <item>@string/text_language_select_system</item>
+        <item>@string/text_language_select_english</item>
+    </string-array>
+</resources>
