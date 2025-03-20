@@ -1,0 +1,911 @@
+# 2. 提供实时行情数据查询的工具
+@mcp.tool()
+def get_real_time_data(symbol) -> Dict[str, Any]:
+    """
+    获取指定股票的实时行情数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 实时行情数据
+    """
+    try:
+        real_time_data = ak.stock_zh_a_spot()
+        # 过滤出请求的股票代码的数据
+        specific_stock_data = real_time_data[real_time_data['代码'] == symbol]
+        return {
+            "content": [TextContent(type="text", text=str(specific_stock_data.to_dict(orient="records")))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 3. 获取宏观经济数据
+@mcp.tool()
+def get_macroeconomic_data(indicator: str) -> Dict[str, Any]:
+    """
+    获取指定的宏观经济指标数据
+    :param indicator: 宏观经济指标名称
+    :return: 宏观经济数据
+    """
+    try:
+        macro_data = ak.macro_indicator(indicator)
+        return {
+            "content": [TextContent(type="text", text=str(macro_data.to_dict(orient="records")))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 4. 获取指定期货的历史行情数据
+@mcp.tool()
+def get_futures_historical_data(symbol: str, start_date: str, end_date: str) -> Dict[str, Any]:
+    """
+    获取指定期货合约的历史行情数据
+    :param symbol: 期货代码 (例如: "RB2105" 表示螺纹钢2105合约)
+    :param start_date: 开始日期 (格式: 'YYYYMMDD')
+    :param end_date: 结束日期 (格式: 'YYYYMMDD')
+    :return: 历史行情数据
+    """
+    try:
+        futures_hist_df = ak.futures_zh_daily(symbol=symbol, start_date=start_date, end_date=end_date)
+        historical_data = futures_hist_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(historical_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 5. 获取实时期货市场数据
+@mcp.tool()
+def get_futures_real_time_data(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货的实时行情数据
+    :param symbol: 期货代码 (例如: "RB2105")
+    :return: 实时行情数据
+    """
+    try:
+        futures_real_time_df = ak.futures_zh_spot(symbol=symbol)
+        specific_futures_data = futures_real_time_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(specific_futures_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 6. 获取主要期货品种的主要合约信息
+@mcp.tool()
+def get_main_contract_info() -> Dict[str, Any]:
+    """
+    获取主要期货品种的主要合约信息
+    :return: 主要合约信息
+    """
+    try:
+        main_contract_df = ak.futures_main_sina()
+        main_contract_info = main_contract_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(main_contract_info))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+# 7. 获取指定日期的期货日行情数据
+@mcp.tool()
+def get_futures_daily_data(date: str) -> Dict[str, Any]:
+    """
+    获取指定日期的所有期货的日行情数据
+    :param date: 日期 (格式: 'YYYYMMDD')
+    :return: 日行情数据
+    """
+    try:
+        daily_data_df = ak.futures_zh_daily_sina(date=date)
+        daily_data = daily_data_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(daily_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 8. 获取期货品种的基本信息
+@mcp.tool()
+def get_futures_basic_info() -> Dict[str, Any]:
+    """
+    获取所有期货品种的基本信息
+    :return: 期货品种基本信息
+    """
+    try:
+        basic_info_df = ak.futures_basic_info()
+        basic_info = basic_info_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(basic_info))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 9. 获取期货持仓量排名
+@mcp.tool()
+def get_futures_position_rank(symbol: str, market: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的持仓量排名
+    :param symbol: 期货代码 (例如: "RB" 表示螺纹钢)
+    :param market: 市场类型 ('SHFE', 'DCE', 'CZCE', 'CFFEX', 'INE')
+    :return: 持仓量排名数据
+    """
+    try:
+        position_rank_df = ak.futures_position_rank(symbol=symbol, market=market)
+        position_rank = position_rank_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(position_rank))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 10. 获取期货期权的基础数据
+@mcp.tool()
+def get_futures_option_basic(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货期权的基础数据
+    :param symbol: 期货代码 (例如: "SR" 表示白糖)
+    :return: 期货期权基础数据
+    """
+    try:
+        option_basic_df = ak.futures_option_contract_basic(symbol=symbol)
+        option_basic = option_basic_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(option_basic))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 11. 获取期货期权的实时行情数据
+@mcp.tool()
+def get_futures_option_real_time(symbol: str, contract: str) -> Dict[str, Any]:
+    """
+    获取指定期货期权的实时行情数据
+    :param symbol: 期货代码 (例如: "SR")
+    :param contract: 合约代码 (例如: "SR2105C6000")
+    :return: 实时行情数据
+    """
+    try:
+        option_real_time_df = ak.futures_option_contract_spot(symbol=symbol, contract=contract)
+        real_time_data = option_real_time_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(real_time_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 12. 获取期货的K线图数据
+@mcp.tool()
+def get_futures_kline_data(symbol: str, period: str, start_date: str, end_date: str) -> Dict[str, Any]:
+    """
+    获取指定期货合约的K线图数据
+    :param symbol: 期货代码 (例如: "RB2105")
+    :param period: K线周期 ('1min', '5min', '15min', '30min', '60min', 'daily', 'weekly', 'monthly')
+    :param start_date: 开始日期 (格式: 'YYYYMMDD')
+    :param end_date: 结束日期 (格式: 'YYYYMMDD')
+    :return: K线图数据
+    """
+    try:
+        kline_data_df = ak.futures_kline(symbol=symbol, period=period, start_date=start_date, end_date=end_date)
+        kline_data = kline_data_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(kline_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+# 13. 获取期货的持仓量和成交量变化数据
+@mcp.tool()
+def get_futures_position_volume_change(symbol: str, market: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的持仓量和成交量变化数据
+    :param symbol: 期货代码 (例如: "RB" 表示螺纹钢)
+    :param market: 市场类型 ('SHFE', 'DCE', 'CZCE', 'CFFEX', 'INE')
+    :return: 持仓量和成交量变化数据
+    """
+    try:
+        position_volume_df = ak.futures_position_and_volume_change(symbol=symbol, market=market)
+        position_volume_change = position_volume_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(position_volume_change))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 14. 获取期货的仓单数据
+@mcp.tool()
+def get_futures_warehouse_receipts(symbol: str, market: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的仓单数据
+    :param symbol: 期货代码 (例如: "RB" 表示螺纹钢)
+    :param market: 市场类型 ('SHFE', 'DCE', 'CZCE', 'CFFEX', 'INE')
+    :return: 仓单数据
+    """
+    try:
+        warehouse_receipts_df = ak.futures_warehouse_receipts(symbol=symbol, market=market)
+        warehouse_receipts = warehouse_receipts_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(warehouse_receipts))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 15. 获取期货的资金流向数据
+@mcp.tool()
+def get_futures_fund_flow(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的资金流向数据
+    :param symbol: 期货代码 (例如: "RB2105")
+    :return: 资金流向数据
+    """
+    try:
+        fund_flow_df = ak.futures_fund_flow(symbol=symbol)
+        fund_flow = fund_flow_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(fund_flow))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 16. 获取期货的主力合约连续数据
+@mcp.tool()
+def get_continuous_main_contract_data(symbol: str, period: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的主力合约连续数据
+    :param symbol: 期货代码 (例如: "RB" 表示螺纹钢)
+    :param period: K线周期 ('daily', 'weekly', 'monthly')
+    :return: 主力合约连续数据
+    """
+    try:
+        main_contract_df = ak.futures_main_contract(symbol=symbol, period=period)
+        main_contract_data = main_contract_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(main_contract_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 17. 获取期货的基差数据
+@mcp.tool()
+def get_basis_data(symbol: str, market: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的基差数据
+    :param symbol: 期货代码 (例如: "RB" 表示螺纹钢)
+    :param market: 市场类型 ('SHFE', 'DCE', 'CZCE', 'CFFEX', 'INE')
+    :return: 基差数据
+    """
+    try:
+        basis_df = ak.futures_basis(symbol=symbol, market=market)
+        basis_data = basis_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(basis_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 18. 获取期货的套利数据
+@mcp.tool()
+def get_spread_data(symbol1: str, symbol2: str, market: str) -> Dict[str, Any]:
+    """
+    获取两个指定期货品种之间的套利数据
+    :param symbol1: 第一个期货代码 (例如: "RB" 表示螺纹钢)
+    :param symbol2: 第二个期货代码 (例如: "HC" 表示热轧卷板)
+    :param market: 市场类型 ('SHFE', 'DCE', 'CZCE', 'CFFEX', 'INE')
+    :return: 套利数据
+    """
+    try:
+        spread_df = ak.futures_spread(symbol1=symbol1, symbol2=symbol2, market=market)
+        spread_data = spread_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(spread_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 19. 获取期货的波动率数据
+@mcp.tool()
+def get_volatility_data(symbol: str, period: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的波动率数据
+    :param symbol: 期货代码 (例如: "RB2105")
+    :param period: 波动率周期 ('daily', 'weekly', 'monthly')
+    :return: 波动率数据
+    """
+    try:
+        volatility_df = ak.futures_volatility(symbol=symbol, period=period)
+        volatility_data = volatility_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(volatility_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 20. 获取期货的相关性分析数据
+@mcp.tool()
+def get_correlation_analysis(symbol1: str, symbol2: str, period: str) -> Dict[str, Any]:
+    """
+    获取两个指定期货品种的相关性分析数据
+    :param symbol1: 第一个期货代码 (例如: "RB" 表示螺纹钢)
+    :param symbol2: 第二个期货代码 (例如: "HC" 表示热轧卷板)
+    :param period: 相关性分析周期 ('daily', 'weekly', 'monthly')
+    :return: 相关性分析数据
+    """
+    try:
+        correlation_df = ak.futures_correlation(symbol1=symbol1, symbol2=symbol2, period=period)
+        correlation_data = correlation_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(correlation_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+        
+# 21. 获取股票的基本财务数据
+@mcp.tool()
+def get_stock_financial_data(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的财务数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 财务数据
+    """
+    try:
+        financial_df = ak.stock_financial(symbol=symbol)
+        financial_data = financial_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(financial_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 22. 获取股票的分红派息数据
+@mcp.tool()
+def get_stock_dividend_data(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的分红派息数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 分红派息数据
+    """
+    try:
+        dividend_df = ak.stock_dividend(symbol=symbol)
+        dividend_data = dividend_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(dividend_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 23. 获取股票的股东人数变化数据
+@mcp.tool()
+def get_stock_holder_number(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的股东人数变化数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 股东人数变化数据
+    """
+    try:
+        holder_number_df = ak.stock_holder_number(symbol=symbol)
+        holder_number_data = holder_number_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(holder_number_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 24. 获取股票的资金流向数据
+@mcp.tool()
+def get_stock_fund_flow(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的资金流向数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 资金流向数据
+    """
+    try:
+        fund_flow_df = ak.stock_fund_flow(symbol=symbol)
+        fund_flow_data = fund_flow_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(fund_flow_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 25. 获取股票的龙虎榜数据
+@mcp.tool()
+def get_stock_dragon_tiger_board(date: str) -> Dict[str, Any]:
+    """
+    获取指定日期的龙虎榜数据
+    :param date: 日期 (格式: 'YYYY-MM-DD')
+    :return: 龙虎榜数据
+    """
+    try:
+        dragon_tiger_df = ak.stock_dragon_tiger_board(date=date)
+        dragon_tiger_data = dragon_tiger_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(dragon_tiger_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 26. 获取股票的机构调研数据
+@mcp.tool()
+def get_stock_institution_survey(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的机构调研数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 机构调研数据
+    """
+    try:
+        institution_survey_df = ak.stock_institution_survey(symbol=symbol)
+        institution_survey_data = institution_survey_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(institution_survey_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 27. 获取股票的行业资金流向数据
+@mcp.tool()
+def get_stock_industry_fund_flow(industry: str) -> Dict[str, Any]:
+    """
+    获取指定行业的资金流向数据
+    :param industry: 行业名称 (例如: "银行", "房地产")
+    :return: 行业资金流向数据
+    """
+    try:
+        industry_fund_flow_df = ak.stock_industry_fund_flow(industry=industry)
+        industry_fund_flow_data = industry_fund_flow_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(industry_fund_flow_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 28. 获取股票的融资融券数据
+@mcp.tool()
+def get_stock_margin_data(symbol: str, start_date: str, end_date: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的融资融券数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :param start_date: 开始日期 (格式: 'YYYYMMDD')
+    :param end_date: 结束日期 (格式: 'YYYYMMDD')
+    :return: 融资融券数据
+    """
+    try:
+        margin_df = ak.stock_margin(symbol=symbol, start_date=start_date, end_date=end_date)
+        margin_data = margin_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(margin_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 29. 获取股票的限售股解禁数据
+@mcp.tool()
+def get_stock_locked_shares_release(date: str) -> Dict[str, Any]:
+    """
+    获取指定日期的限售股解禁数据
+    :param date: 日期 (格式: 'YYYY-MM-DD')
+    :return: 限售股解禁数据
+    """
+    try:
+        locked_shares_release_df = ak.stock_locked_shares_release(date=date)
+        locked_shares_release_data = locked_shares_release_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(locked_shares_release_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 30. 获取股票的股东增减持数据
+@mcp.tool()
+def get_stock_shareholder_changes(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的股东增减持数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 股东增减持数据
+    """
+    try:
+        shareholder_changes_df = ak.stock_shareholder_changes(symbol=symbol)
+        shareholder_changes_data = shareholder_changes_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(shareholder_changes_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 31. 获取股票的业绩预告数据
+@mcp.tool()
+def get_stock_performance_forecast(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的业绩预告数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 业绩预告数据
+    """
+    try:
+        performance_forecast_df = ak.stock_performance_forecast(symbol=symbol)
+        performance_forecast_data = performance_forecast_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(performance_forecast_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 32. 获取股票的业绩快报数据
+@mcp.tool()
+def get_stock_performance_report(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的业绩快报数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 业绩快报数据
+    """
+    try:
+        performance_report_df = ak.stock_performance_report(symbol=symbol)
+        performance_report_data = performance_report_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(performance_report_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 33. 获取股票的重大事项公告数据
+@mcp.tool()
+def get_stock_major_announcements(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的重大事项公告数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 重大事项公告数据
+    """
+    try:
+        major_announcements_df = ak.stock_major_announcements(symbol=symbol)
+        major_announcements_data = major_announcements_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(major_announcements_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 34. 获取股票的股权激励数据
+@mcp.tool()
+def get_stock_equity_incentive(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的股权激励数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 股权激励数据
+    """
+    try:
+        equity_incentive_df = ak.stock_equity_incentive(symbol=symbol)
+        equity_incentive_data = equity_incentive_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(equity_incentive_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 35. 获取股票的股东质押数据
+@mcp.tool()
+def get_stock_share_pledge(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的股东质押数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 股东质押数据
+    """
+    try:
+        share_pledge_df = ak.stock_share_pledge(symbol=symbol)
+        share_pledge_data = share_pledge_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(share_pledge_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+        
+# 36. 获取股票的概念板块资金流向数据
+@mcp.tool()
+def get_stock_concept_fund_flow(concept: str) -> Dict[str, Any]:
+    """
+    获取指定概念板块的资金流向数据
+    :param concept: 概念板块名称 (例如: "5G", "芯片")
+    :return: 概念板块资金流向数据
+    """
+    try:
+        concept_fund_flow_df = ak.stock_concept_fund_flow(concept=concept)
+        concept_fund_flow_data = concept_fund_flow_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(concept_fund_flow_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 37. 获取股票的北向资金流入流出数据
+@mcp.tool()
+def get_stock_north_bound_flow() -> Dict[str, Any]:
+    """
+    获取北向资金的流入流出数据
+    :return: 北向资金流入流出数据
+    """
+    try:
+        north_bound_flow_df = ak.stock_north_bound_flow()
+        north_bound_flow_data = north_bound_flow_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(north_bound_flow_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 38. 获取股票的南向资金流入流出数据
+@mcp.tool()
+def get_stock_south_bound_flow() -> Dict[str, Any]:
+    """
+    获取南向资金的流入流出数据
+    :return: 南向资金流入流出数据
+    """
+    try:
+        south_bound_flow_df = ak.stock_south_bound_flow()
+        south_bound_flow_data = south_bound_flow_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(south_bound_flow_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 39. 获取股票的沪深港通持股数据
+@mcp.tool()
+def get_stock_hk_connect_holdings(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的沪深港通持股数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 沪深港通持股数据
+    """
+    try:
+        hk_connect_holdings_df = ak.stock_hk_connect_holdings(symbol=symbol)
+        hk_connect_holdings_data = hk_connect_holdings_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(hk_connect_holdings_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 40. 获取股票的股东户数变化趋势数据
+@mcp.tool()
+def get_stock_holder_count_trend(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的股东户数变化趋势数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 股东户数变化趋势数据
+    """
+    try:
+        holder_count_trend_df = ak.stock_holder_count_trend(symbol=symbol)
+        holder_count_trend_data = holder_count_trend_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(holder_count_trend_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 41. 获取股票的重大资产重组数据
+@mcp.tool()
+def get_stock_major_reorganization(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的重大资产重组数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 重大资产重组数据
+    """
+    try:
+        major_reorganization_df = ak.stock_major_reorganization(symbol=symbol)
+        major_reorganization_data = major_reorganization_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(major_reorganization_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 42. 获取股票的高管增持减持数据
+@mcp.tool()
+def get_stock_executive_changes(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的高管增持减持数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 高管增持减持数据
+    """
+    try:
+        executive_changes_df = ak.stock_executive_changes(symbol=symbol)
+        executive_changes_data = executive_changes_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(executive_changes_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 43. 获取股票的限售股解禁明细数据
+@mcp.tool()
+def get_stock_locked_shares_release_detail(date: str) -> Dict[str, Any]:
+    """
+    获取指定日期的限售股解禁明细数据
+    :param date: 日期 (格式: 'YYYY-MM-DD')
+    :return: 限售股解禁明细数据
+    """
+    try:
+        locked_shares_release_detail_df = ak.stock_locked_shares_release_detail(date=date)
+        locked_shares_release_detail_data = locked_shares_release_detail_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(locked_shares_release_detail_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 44. 获取股票的机构调研详细数据
+@mcp.tool()
+def get_stock_institution_survey_detail(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的机构调研详细数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 机构调研详细数据
+    """
+    try:
+        institution_survey_detail_df = ak.stock_institution_survey_detail(symbol=symbol)
+        institution_survey_detail_data = institution_survey_detail_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(institution_survey_detail_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 45. 获取股票的股权激励计划实施情况数据
+@mcp.tool()
+def get_stock_equity_incentive_implementation(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的股权激励计划实施情况数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 股权激励计划实施情况数据
+    """
+    try:
+        equity_incentive_implementation_df = ak.stock_equity_incentive_implementation(symbol=symbol)
+        equity_incentive_implementation_data = equity_incentive_implementation_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(equity_incentive_implementation_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 46. 获取股票的公司公告摘要数据
+@mcp.tool()
+def get_stock_company_announcement(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定期货品种的公司公告摘要数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 公司公告摘要数据
+    """
+    try:
+        company_announcements_df = ak.stock_company_announcements(symbol=symbol)
+        company_announcements_data = company_announcements_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(company_announcements_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }

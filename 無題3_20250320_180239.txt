@@ -1,0 +1,149 @@
+from typing import Any, Dict, List
+import httpx
+from mcp.server.fastmcp import FastMCP
+from mcp.types import TextContent
+import akshare as ak
+from datetime import datetime, timedelta
+import pandas as pd
+import sys
+
+# 配置标准输入输出的编码
+sys.stdin.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding='utf-8')
+
+# 初始化 FastMCP 服务器
+mcp = FastMCP("Akshare API Server")
+
+# 工具：获取 A 股历史行情数据
+@mcp.tool()
+def get_historical_data(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定 A 股的历史行情数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 历史行情数据
+    """
+    try:
+        end_date = datetime.today()
+        start_date = end_date - timedelta(days=500)
+        start_date = start_date.strftime('%Y%m%d')
+        end_date = end_date.strftime('%Y%m%d')
+
+        stock_zh_a_hist_df = ak.stock_zh_a_hist(symbol=symbol, period="daily", start_date=start_date, end_date=end_date, adjust="qfq")
+        historical_data = stock_zh_a_hist_df.tail(500).to_dict(orient="records")
+        
+        return {
+            "content": [TextContent(type="text", text=str(historical_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 工具：获取股票实时行情数据
+@mcp.tool()
+def get_realtime_data(symbol: str) -> Dict[str, Any]:
+    """
+    获取指定股票的实时行情数据
+    :param symbol: 股票代码 (例如: "600000" 或 "000001")
+    :return: 实时行情数据
+    """
+    try:
+        realtime_data = ak.stock_zh_a_spot()
+        filtered_data = realtime_data[realtime_data["代码"] == symbol].to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(filtered_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 工具：获取基金历史净值数据
+@mcp.tool()
+def get_fund_historical_data(fund_code: str) -> Dict[str, Any]:
+    """
+    获取指定基金的历史净值数据
+    :param fund_code: 基金代码 (例如: "161725")
+    :return: 历史净值数据
+    """
+    try:
+        fund_hist_df = ak.fund_em_open_fund_info(fund=fund_code, indicator="单位净值走势")
+        historical_data = fund_hist_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(historical_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 工具：获取期货历史行情数据
+@mcp.tool()
+def get_futures_historical_data(symbol: str, start_date: str, end_date: str) -> Dict[str, Any]:
+    """
+    获取指定期货的历史行情数据
+    :param symbol: 期货代码 (例如: "RB2305")
+    :param start_date: 开始日期 (格式: "YYYY-MM-DD")
+    :param end_date: 结束日期 (格式: "YYYY-MM-DD")
+    :return: 历史行情数据
+    """
+    try:
+        futures_hist_df = ak.futures_zh_daily_sina(symbol=symbol, start_date=start_date, end_date=end_date)
+        historical_data = futures_hist_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(historical_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 工具：获取外汇实时汇率数据
+@mcp.tool()
+def get_forex_realtime_data(currency_pair: str) -> Dict[str, Any]:
+    """
+    获取指定外汇对的实时汇率数据
+    :param currency_pair: 外汇对 (例如: "USD/CNY")
+    :return: 实时汇率数据
+    """
+    try:
+        forex_data = ak.currency_latest()
+        filtered_data = forex_data[forex_data["货币对"] == currency_pair].to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(filtered_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 工具：获取债券历史行情数据
+@mcp.tool()
+def get_bond_historical_data(bond_code: str, start_date: str, end_date: str) -> Dict[str, Any]:
+    """
+    获取指定债券的历史行情数据
+    :param bond_code: 债券代码 (例如: "010107")
+    :param start_date: 开始日期 (格式: "YYYY-MM-DD")
+    :param end_date: 结束日期 (格式: "YYYY-MM-DD")
+    :return: 历史行情数据
+    """
+    try:
+        bond_hist_df = ak.bond_zh_hs_daily(symbol=bond_code, start_date=start_date, end_date=end_date)
+        historical_data = bond_hist_df.to_dict(orient="records")
+        return {
+            "content": [TextContent(type="text", text=str(historical_data))]
+        }
+    except Exception as e:
+        return {
+            "isError": True,
+            "content": [TextContent(type="text", text=f"Error: {str(e)}")]
+        }
+
+# 运行服务器
+if __name__ == "__main__":
+    mcp.run(transport='stdio')
